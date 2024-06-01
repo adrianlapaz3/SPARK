@@ -3,7 +3,7 @@ Title: Efficient and Accurate Crop Monitoring Algorithm
 Version: 0.1.0
 Authors@R: person("adrianlapaz3", email = "adrianlapaz2010@gmail.com", role = c("aut", "cre"))
 Description: SPARK is an algorithm developed for crop monitoring using vegetation indices calculated from combinations of spectral bands and data fusion.
-License: MIT
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.2.0
+RoxygenNote: 7.3.1
