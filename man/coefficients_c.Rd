@@ -4,12 +4,12 @@
 \alias{coefficients_c}
 \title{Coefficients c}
 \usage{
-coefficients_c(bands, coefs)
+coefficients_c(name_band, coeffs)
 }
 \arguments{
-\item{bands}{The bands}
+\item{name_band}{The name band}
 
-\item{coefs}{The coefficients c are 1, 0, and -1 in a vector. Each of these coefficients is used to multiply each band in iteration i (see figure in the document).}
+\item{coeffs}{The coefficients c are 1, 0, and -1 in a vector. Each of these coefficients is used to multiply each band in iteration i (see figure in the document).}
 }
 \value{
 Matrix with the coefficients c
@@ -18,9 +18,6 @@ Matrix with the coefficients c
 Coefficients c
 }
 \examples{
-B2 = c(0.2, 0.7, 0.5)
-B3 = c(0.4, 0.2, 0.6)
-spectral_bands = cbind(B2, B3)
 band_name = c("B2", "B3")
 coefficients = c(1,0,-1)
 coefficients_c(band_name,coefficients)
