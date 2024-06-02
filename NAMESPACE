@@ -2,5 +2,8 @@
 
 export(band_summations)
 export(coefficients_c)
+export(optical_SAR_Ns_indices)
+export(optical_SAR_indices)
+export(optical_indices)
 importFrom(stats,cor)
 importFrom(utils,combn)

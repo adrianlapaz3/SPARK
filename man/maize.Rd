@@ -26,10 +26,27 @@ A data frame with 56 rows and 23 columns:
   \item{B8A}{Spectral band B8A (narrow near infrared, 865 nm, ± 22 nm, 20 m) values from Sentinel-2 obsetations}
   \item{B11}{Spectral band B11 (short wavelength infrared 1, 1375 nm, ± 93 nm, 20 m) values from Sentinel-2 obsetations}
   \item{B12}{Spectral band B12 (short wavelength infrared 2, 1612 nm, ± 180 nm, 20 m) values from Sentinel-2 obsetations}
-  \item{VH}{C-SAR backscatter for vertical horizontal (VH) in dB values from Sentinel-1 obsetations}
-  \item{VV}{C-SAR backscatter for vertical horizontal (VV) in dB values from Sentinel-1 obsetations}
-  \item{LIA}{C-SAR Local Angle of Incidence (LIA) in degree values from Sentinel-1 obsetations}
-  \item{Ns}{Nitrate-nitrogen (NO3-N) measures the amount of available nitrogen in the soil that can be immediately absorbed by the plants. This value was determined in the soil profile 0-60 when sowing maize and expressed in kg per hectare}
+  \item{VH}{C-SAR backscatter for the vertical horizontal (VH) in dB values from Sentinel-1 observations. The dB values of the VH backscatter were transformed into absolute values and divided by 100 values so that the VH values lie between 0 and 1, similar to the scale of the Sentinel-2 spectral bands}
+  \item{VV}{C-SAR backscatter for the vertical vertical (VV) in dB values from Sentinel-1 observations. The dB values of the VV backscatter were transformed into absolute values and divided by 100 values so that the VV values lie between 0 and 1, similar to the scale of the Sentinel-2 spectral bands}
+  \item{VHxLIA}{C-SAR backscatter for the vertical horizontal (VH) in dB values, multiplied by Local Angle of Incidence (LIA) from Sentinel-1 observations. The VHxLIA backscatter values were converted to absolute values and divided by 1000 values so that the VHxLIA values lie between 0 and 1, similar to the scale of the Sentinel-2 spectral bands}
+  \item{VVxLIA}{C-SAR backscatter for the vertical vertical (VV) in dB values, multiplied by Local Angle of Incidence (LIA) from Sentinel-1 observations. The VVxLIA backscatter values were converted to absolute values and divided by 1000 values so that the VVxLIA values lie between 0 and 1, similar to the scale of the Sentinel-2 spectral bands}
+  \item{Ns}{Nitrate-nitrogen (NO3-N) measures the amount of available nitrogen in the soil that can be immediately taken up by plants. This value was determined in the soil profile 0-60 when sowing maize and expressed in kg per hectare in the laboratory. The Ns values were then divided by 1000 values so that the Ns values lie between 0 and 1, similar to the scale of the Sentinel-2 spectral bands}
+  \item{B2_2}{B2 squared}
+  \item{B3_2}{B3 squared}
+  \item{B4_2}{B4 squared}
+  \item{B5_2}{B5 squared}
+  \item{B6_2}{B6 squared}
+  \item{B7_2}{B7 squared}
+  \item{B8_2}{B8 squared}
+  \item{B8A_2}{B8A squared}
+  \item{B11_2}{B11 squared}
+  \item{B12_2}{B12 squared}
+  \item{VH_2}{VH squared}
+  \item{VV_2}{VV squared}
+  \item{VHxLIA_2}{VHxLIA squared}
+  \item{VVxLIA_2}{VVxLIA squared}
+  \item{Ns_2}{Ns squared}
+  
 }
 }
 \source{

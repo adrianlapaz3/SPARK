@@ -11,6 +11,9 @@ band_summations(bands, coefficients_c)
 
 \item{coefficients_c}{The coefficients c}
 }
+\value{
+# Band summations
+}
 \description{
 Band summations
 }

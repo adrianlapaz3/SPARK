@@ -3,7 +3,7 @@
 #' @param bands Band summations as a result of multiplying the bands by the coefficients
 #' @param coefficients_c The coefficients c
 #'
-#' @return
+#' @return # Band summations
 #' @export
 #'
 #' @examples
