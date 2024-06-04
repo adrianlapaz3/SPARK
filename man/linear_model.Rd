@@ -11,6 +11,7 @@ linear_model(
   train_exp,
   test_exp,
   model_degree,
+  metric = "kge",
   orcutt = 0,
   cook_distance = 0
 )
@@ -27,6 +28,8 @@ linear_model(
 \item{test_exp}{Vector with experiment numbers for test model,}
 
 \item{model_degree}{Degree of model (1 or 2),}
+
+\item{metric}{The selection metric can be RRMSE, MAPE or KGE. KGE is particularly useful when the estimate needs to accurately reflect the variability at the observed extremes}
 
 \item{orcutt}{To readjust model parameters if there is dependence (1 for true, 0 for false)}
 
@@ -59,9 +62,10 @@ NNI_V10_model = linear_model(
   experiment = V10["Experiment"], 
   train_exp = c(1, 2, 3, 4, 10, 11),   
   test_exp = c(5, 6, 7, 8, 9),  
-  model_degree = 2, 
+  model_degree = 2,
+  metric = "kge",
   orcutt = 1, 
-    cook_distance = 1
+  cook_distance = 1
 )
   
 }
