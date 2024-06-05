@@ -42,7 +42,7 @@ model_plot
 \examples{
 maize_data = SPARK::maize
 V10 = maize_data[maize_data$Stage == "V10", ]
-bands_names <- c("Ns", "B3", "B4", "B5", "B6", "B7_2", "B8", "VVxL", "B11_2", "VH")
+bands_names <- c("B3", "B4", "B5", "B6", "B8", "B7_2", "B11_2", "VH",  "VVxL", "Ns")
 
 # Combining spectral bands 
 NNI_V10_VIs = optical_SAR_Ns_indices(
@@ -75,7 +75,7 @@ shape = c(21,22,23,24,25),
 y_breaks = 5,
 min_y_lim = 0,
 max_y_lim = 2,
-directory = "E:/BORRAR/RSE/Package/SPARK/results"
+directory = "C:/Users/User/Downloads"
 )
 
 }

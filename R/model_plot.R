@@ -55,7 +55,7 @@
 #' y_breaks = 5,
 #' min_y_lim = 0,
 #' max_y_lim = 2,
-#' directory = "E:/BORRAR/RSE/Package/SPARK/results"
+#' directory = "C:/Users/User/Downloads"
 #' )
 #' 
 model_plot = function(models = models,  

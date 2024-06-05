@@ -47,7 +47,7 @@ linear_model
 \examples{
 maize_data = SPARK::maize
 V10 = maize_data[maize_data$Stage == "V10", ]
-bands_names <- c("Ns", "B3", "B4", "B5", "B6", "B7_2", "B8", "VVxL", "B11_2", "VH")
+bands_names <- c("B3", "B4", "B5", "B6", "B8", "B7_2", "B11_2", "VH",  "VVxL", "Ns")
 
 # Combining spectral bands 
 NNI_V10_VIs = optical_SAR_Ns_indices(
@@ -57,7 +57,6 @@ NNI_V10_VIs = optical_SAR_Ns_indices(
   set_bands = bands_names, 
   scan = 0.995
 )
-
 
 # Modeling vegetation indices with linear models 
 NNI_V10_model = linear_model(
@@ -70,19 +69,7 @@ NNI_V10_model = linear_model(
   model_degree = 2,
   metric = "kge",
   orcutt = 1, 
-  cook_distance = 1
+  cook_distance = 0
 )
-
-# Define the file path
-file_path <- "E:/BORRAR/RSE/Package/SPARK/results/result.txt"
-# Check the condition and write the result to the file
-if (NNI_V10_model$best_metric_mod5 != Inf) {
- result <-  as.character(NNI_V10_model$best_metric_mod5)
-} else {
-  result <- as.character(NNI_V10_model$best_metric_mod5)
-}
-
-writeLines(result, file_path)
-
 
 }
