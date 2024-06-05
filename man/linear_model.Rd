@@ -8,10 +8,11 @@ linear_model(
   VIs,
   y,
   experiment,
+  treatment,
   train_exp,
   test_exp,
   model_degree,
-  metric = "kge",
+  metric = "rrmse",
   orcutt = 0,
   cook_distance = 0
 )
@@ -19,24 +20,26 @@ linear_model(
 \arguments{
 \item{VIs}{selected vegetation indices}
 
-\item{y}{Observed variable}
+\item{y}{Observed variable, e.g. data["yield"]}
 
-\item{experiment}{Variable_with_number_experiments,}
+\item{experiment}{Variable_with_number_experiments, e.g. data["Experiment"]}
 
-\item{train_exp}{Vector with experiment numbers for train model,}
+\item{treatment}{Variable_with_treatments, e.g. data["Treatment"]}
 
-\item{test_exp}{Vector with experiment numbers for test model,}
+\item{train_exp}{Vector with experiment numbers for train model, e.g. c(1,2,3,4,8,9)}
+
+\item{test_exp}{Vector with experiment numbers for test model,  e.g. c(5,6,7,8,9)}
 
 \item{model_degree}{Degree of model (1 or 2),}
 
-\item{metric}{The selection metric can be RRMSE, MAPE or KGE. KGE is particularly useful when the estimate needs to accurately reflect the variability at the observed extremes}
+\item{metric}{The selection metric can be RRMSE (put "rrmse" or "RRMSE"), MAPE (put "mape" or "MAPE") or KGE(put "kge" or "KGE"). KGE is particularly useful when the estimate needs to accurately reflect the variability at the observed extremes}
 
 \item{orcutt}{To readjust model parameters if there is dependence (1 for true, 0 for false)}
 
 \item{cook_distance}{To eliminate outliers during modeling (1 for true, 0 for false)}
 }
 \value{
-Top five of VIs, models, RRMSE, observed variable, and predicted variable
+Top five of VIs, models, used metric, observed variable, and predicted variable
 }
 \description{
 linear_model
@@ -44,10 +47,10 @@ linear_model
 \examples{
 maize_data = SPARK::maize
 V10 = maize_data[maize_data$Stage == "V10", ]
-bands_names <- c("B2", "B3", "B4", "B5", "B6", "B7", "B8", "B8A", "B11", "B12")
+bands_names <- c("Ns", "B3", "B4", "B5", "B6", "B7_2", "B8", "VVxL", "B11_2", "VH")
 
 # Combining spectral bands 
-NNI_V10_VIs = optical_indices(
+NNI_V10_VIs = optical_SAR_Ns_indices(
   data = V10, 
   y = V10["NNI"], 
   n_bands= 4, 
@@ -55,11 +58,13 @@ NNI_V10_VIs = optical_indices(
   scan = 0.995
 )
 
+
 # Modeling vegetation indices with linear models 
 NNI_V10_model = linear_model(
   VIs = NNI_V10_VIs,
   y = V10["NNI"],
   experiment = V10["Experiment"], 
+  treatment = V10["Treatment"],
   train_exp = c(1, 2, 3, 4, 10, 11),   
   test_exp = c(5, 6, 7, 8, 9),  
   model_degree = 2,
@@ -67,5 +72,17 @@ NNI_V10_model = linear_model(
   orcutt = 1, 
   cook_distance = 1
 )
-  
+
+# Define the file path
+file_path <- "E:/BORRAR/RSE/Package/SPARK/results/result.txt"
+# Check the condition and write the result to the file
+if (NNI_V10_model$best_metric_mod5 != Inf) {
+ result <-  as.character(NNI_V10_model$best_metric_mod5)
+} else {
+  result <- as.character(NNI_V10_model$best_metric_mod5)
+}
+
+writeLines(result, file_path)
+
+
 }

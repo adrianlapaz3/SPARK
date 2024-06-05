@@ -12,4 +12,9 @@ Depends:
 Imports:
     lmtest,
     nortest,
-    orcutt
+    orcutt,
+    ggplot2,
+    paletteer,
+    gridExtra,
+    egg,
+    svglite

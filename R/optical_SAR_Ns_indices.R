@@ -13,7 +13,7 @@
 #' maize_data = SPARK::maize
 #' V10 = maize_data[maize_data$Stage == "V10", ]
 #' bands_names <- c("B2", "B3", "B4", "B5", "B6", "B7", "B8", "B8A", "B11", "B12", "VH", "VV", "Ns")
-#' NNI_V10_VIs = optical_indices(
+#' NNI_V10_VIs = optical_SAR_Ns_indices(
 #' data = V10, 
 #' y = V10["NNI"], 
 #' n_bands= 4, 
@@ -31,7 +31,7 @@ optical_SAR_Ns_indices <- function(data, y, n_bands, set_bands, scan = FALSE) {
   coefs = c(1, 0, -1)
   
   combinations <- combn(set_bands, n_bands, simplify = FALSE)
-  combinations <- Filter(function(bands) any(grepl("Nav", bands)), combinations)
+  combinations <- Filter(function(bands) any(grepl("Ns", bands)), combinations)
   
   for (bands in combinations) {
     
