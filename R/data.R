@@ -25,8 +25,8 @@
 #'   \item{B12}{Spectral band B12 (short wavelength infrared 2, 1612 nm, ± 180 nm, 20 m) values from Sentinel-2 obsetations}
 #'   \item{VH}{C-SAR backscatter for the vertical horizontal (VH) in dB values from Sentinel-1 observations. The dB values of the VH backscatter were transformed into absolute values and divided by 100 values so that the VH values lie between 0 and 1, similar to the scale of the Sentinel-2 spectral bands}
 #'   \item{VV}{C-SAR backscatter for the vertical vertical (VV) in dB values from Sentinel-1 observations. The dB values of the VV backscatter were transformed into absolute values and divided by 100 values so that the VV values lie between 0 and 1, similar to the scale of the Sentinel-2 spectral bands}
-#'   \item{VHxLIA}{C-SAR backscatter for the vertical horizontal (VH) in dB values, multiplied by Local Angle of Incidence (LIA) from Sentinel-1 observations. The VHxLIA backscatter values were converted to absolute values and divided by 1000 values so that the VHxLIA values lie between 0 and 1, similar to the scale of the Sentinel-2 spectral bands}
-#'   \item{VVxLIA}{C-SAR backscatter for the vertical vertical (VV) in dB values, multiplied by Local Angle of Incidence (LIA) from Sentinel-1 observations. The VVxLIA backscatter values were converted to absolute values and divided by 1000 values so that the VVxLIA values lie between 0 and 1, similar to the scale of the Sentinel-2 spectral bands}
+#'   \item{VHxL}{C-SAR backscatter for the vertical horizontal (VH) in dB values, multiplied by Local Angle of Incidence (LIA) from Sentinel-1 observations. The VHxL backscatter values were converted to absolute values and divided by 1000 values so that the VHxL values lie between 0 and 1, similar to the scale of the Sentinel-2 spectral bands}
+#'   \item{VVxL}{C-SAR backscatter for the vertical vertical (VV) in dB values, multiplied by Local Angle of Incidence (LIA) from Sentinel-1 observations. The VVxL backscatter values were converted to absolute values and divided by 1000 values so that the VVxL values lie between 0 and 1, similar to the scale of the Sentinel-2 spectral bands}
 #'   \item{Ns}{Nitrate-nitrogen (NO3-N) measures the amount of available nitrogen in the soil that can be immediately taken up by plants. This value was determined in the soil profile 0-60 when sowing maize and expressed in kg per hectare in the laboratory. The Ns values were then divided by 1000 values so that the Ns values lie between 0 and 1, similar to the scale of the Sentinel-2 spectral bands}
 #'   \item{B2_2}{B2 squared}
 #'   \item{B3_2}{B3 squared}
@@ -40,8 +40,8 @@
 #'   \item{B12_2}{B12 squared}
 #'   \item{VH_2}{VH squared}
 #'   \item{VV_2}{VV squared}
-#'   \item{VHxLIA_2}{VHxLIA squared}
-#'   \item{VVxLIA_2}{VVxLIA squared}
+#'   \item{VHxL_2}{VHxL squared}
+#'   \item{VVxL_2}{VVxL squared}
 #'   \item{Ns_2}{Ns squared}
 #'   
 #' }
@@ -285,7 +285,7 @@ VV = c(0.145,0.149,0.158,0.143,0.126,0.140,0.143,0.141,0.149,0.139,0.144,0.135,0
        0.133,0.125,0.113,0.128,0.130,0.116,0.129,0.128,0.127,0.126,0.124,0.121,0.122,0.122,0.119,0.118,0.115,0.120,0.125,0.132,0.140,0.121,0.137,0.142,0.136,0.133,0.136,0.136,
        0.154,0.136,0.134,0.144,0.139,0.144,0.144,0.119,0.140,0.131,0.136,0.126,0.130,0.117,0.096,0.109,0.107,0.102,0.099,0.084,0.094,0.080,0.094,0.095),
 
-VHxLIA = c(0.808,0.793,0.892,0.874,0.789,0.846,0.787,0.835,0.843,0.749,0.817,0.822,0.787,0.785,0.771,0.819,0.806,0.768,0.863,0.829,0.773,0.806,0.815,0.816,0.762,0.802,0.888,
+VHxL = c(0.808,0.793,0.892,0.874,0.789,0.846,0.787,0.835,0.843,0.749,0.817,0.822,0.787,0.785,0.771,0.819,0.806,0.768,0.863,0.829,0.773,0.806,0.815,0.816,0.762,0.802,0.888,
            0.828,0.883,0.891,0.839,0.846,0.809,0.811,0.897,0.774,0.782,0.785,0.765,0.760,0.861,0.835,0.954,0.905,0.823,0.714,0.671,0.732,0.688,0.687,0.691,0.764,0.710,0.765,
            0.792,0.687,0.612,0.628,0.710,0.601,0.683,0.695,0.671,0.655,0.622,0.595,0.617,0.586,0.620,0.586,0.679,0.640,0.632,0.636,0.620,0.658,0.653,0.674,0.684,0.650,0.639,
            0.679,0.647,0.655,0.616,0.619,0.630,0.603,0.602,0.624,0.683,0.694,0.772,0.752,0.691,0.779,0.763,0.785,0.773,0.743,0.633,0.615,0.622,0.651,0.637,0.637,0.666,0.614,
@@ -295,7 +295,7 @@ VHxLIA = c(0.808,0.793,0.892,0.874,0.789,0.846,0.787,0.835,0.843,0.749,0.817,0.8
            0.770,0.713,0.780,0.779,0.746,0.777,0.766,0.779,0.837,0.802,0.749,0.763,0.756,0.775,0.832,0.734,0.755,0.796,0.713,0.725,0.722,0.554,0.626,0.648,0.597,0.643,0.551,
            0.570,0.557,0.610,0.608),
 
-VVxLIA = c(0.536,0.554,0.587,0.529,0.469,0.521,0.531,0.523,0.553,0.515,0.533,0.501,0.470,0.533,0.488,0.526,0.466,0.473,0.496,0.561,0.515,0.503,0.537,0.544,0.564,0.485,0.595,
+VVxL = c(0.536,0.554,0.587,0.529,0.469,0.521,0.531,0.523,0.553,0.515,0.533,0.501,0.470,0.533,0.488,0.526,0.466,0.473,0.496,0.561,0.515,0.503,0.537,0.544,0.564,0.485,0.595,
            0.597,0.570,0.541,0.577,0.565,0.522,0.572,0.551,0.485,0.467,0.485,0.468,0.483,0.498,0.514,0.478,0.499,0.525,0.393,0.427,0.460,0.398,0.455,0.491,0.477,0.476,0.440,
            0.412,0.328,0.279,0.319,0.328,0.251,0.332,0.297,0.280,0.307,0.303,0.280,0.276,0.329,0.315,0.275,0.283,0.328,0.349,0.283,0.355,0.356,0.366,0.359,0.355,0.270,0.333,
            0.355,0.314,0.384,0.290,0.309,0.328,0.306,0.320,0.244,0.442,0.463,0.469,0.443,0.490,0.497,0.468,0.480,0.496,0.457,0.349,0.381,0.358,0.343,0.357,0.360,0.399,0.388,
@@ -459,7 +459,7 @@ VV_2 = c(0.02095,0.02239,0.02527,0.02039,0.01665,0.01999,0.02052,0.0201,0.02225,
          0.01481,0.0189,0.02016,0.01848,0.0178,0.01841,0.01895,0.02388,0.01854,0.01814,0.02108,0.01957,0.02076,0.02091,0.01434,0.01977,0.01718,0.01873,0.01594,0.01688,0.01376,
          0.00931,0.01196,0.01162,0.01039,0.00978,0.0073,0.00887,0.00652,0.0092,0.00921),
 
-VHxLIA_2 = c(0.65306,0.62944,0.79857,0.76498,0.62431,0.71928,0.6278,0.69944,0.71285,0.56253,0.67031,0.67524,0.6232,0.61748,0.59516,0.67683,0.6502,0.59095,0.74562,0.69065,0.61234,
+VHxL_2 = c(0.65306,0.62944,0.79857,0.76498,0.62431,0.71928,0.6278,0.69944,0.71285,0.56253,0.67031,0.67524,0.6232,0.61748,0.59516,0.67683,0.6502,0.59095,0.74562,0.69065,0.61234,
              0.6567,0.66548,0.67202,0.5835,0.64995,0.79013,0.68795,0.7811,0.79765,0.70497,0.72049,0.65512,0.65863,0.80655,0.60523,0.61136,0.61941,0.5907,0.58159,0.74486,0.70273,
              0.91019,0.82407,0.67887,0.51221,0.45278,0.53626,0.47433,0.47356,0.47961,0.58785,0.5072,0.58606,0.64045,0.47322,0.37589,0.39458,0.50829,0.36415,0.46684,0.48315,
              0.45336,0.43086,0.388,0.35353,0.38202,0.34374,0.38469,0.34417,0.46284,0.4101,0.4047,0.40813,0.38651,0.43851,0.42603,0.45394,0.46803,0.42342,0.40846,0.4609,0.4191,
@@ -471,7 +471,7 @@ VHxLIA_2 = c(0.65306,0.62944,0.79857,0.76498,0.62431,0.71928,0.6278,0.69944,0.71
              0.55362,0.6188,0.5818,0.59438,0.50891,0.60923,0.60878,0.55807,0.60445,0.5899,0.60907,0.7063,0.64685,0.56075,0.58747,0.58005,0.60064,0.69303,0.54011,0.56965,0.63568,
              0.5132,0.52616,0.52138,0.30809,0.39979,0.42226,0.35831,0.41616,0.3037,0.32563,0.31136,0.37472,0.36977),
 
-VVxLIA_2 = c(0.28779,0.30766,0.34716,0.2801,0.2288,0.27464,0.28195,0.27612,0.30563,0.26902,0.28513,0.25372,0.22128,0.28472,0.24163,0.27966,0.21836,0.22397,0.24801,0.31494,0.26715,
+VVxL_2 = c(0.28779,0.30766,0.34716,0.2801,0.2288,0.27464,0.28195,0.27612,0.30563,0.26902,0.28513,0.25372,0.22128,0.28472,0.24163,0.27966,0.21836,0.22397,0.24801,0.31494,0.26715,
              0.25387,0.28814,0.29639,0.31881,0.23647,0.35537,0.35743,0.32572,0.29592,0.33619,0.32627,0.27355,0.32782,0.30594,0.23599,0.21891,0.23543,0.22385,0.23408,0.24869,
              0.26543,0.2324,0.24977,0.27609,0.15542,0.18215,0.21224,0.16107,0.20736,0.2417,0.22914,0.22798,0.19604,0.1699,0.10843,0.08203,0.10235,0.10968,0.06713,0.11046,0.09052,
              0.08044,0.0955,0.0934,0.08125,0.077,0.11021,0.09953,0.07646,0.08036,0.10843,0.12262,0.0804,0.12748,0.12643,0.13831,0.12903,0.12664,0.07317,0.11291,0.13113,0.09891,
