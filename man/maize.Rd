@@ -28,8 +28,8 @@ A data frame with 56 rows and 23 columns:
   \item{B12}{Spectral band B12 (short wavelength infrared 2, 1612 nm, ± 180 nm, 20 m) values from Sentinel-2 obsetations}
   \item{VH}{C-SAR backscatter for the vertical horizontal (VH) in dB values from Sentinel-1 observations. The dB values of the VH backscatter were transformed into absolute values and divided by 100 values so that the VH values lie between 0 and 1, similar to the scale of the Sentinel-2 spectral bands}
   \item{VV}{C-SAR backscatter for the vertical vertical (VV) in dB values from Sentinel-1 observations. The dB values of the VV backscatter were transformed into absolute values and divided by 100 values so that the VV values lie between 0 and 1, similar to the scale of the Sentinel-2 spectral bands}
-  \item{VHxLIA}{C-SAR backscatter for the vertical horizontal (VH) in dB values, multiplied by Local Angle of Incidence (LIA) from Sentinel-1 observations. The VHxLIA backscatter values were converted to absolute values and divided by 1000 values so that the VHxLIA values lie between 0 and 1, similar to the scale of the Sentinel-2 spectral bands}
-  \item{VVxLIA}{C-SAR backscatter for the vertical vertical (VV) in dB values, multiplied by Local Angle of Incidence (LIA) from Sentinel-1 observations. The VVxLIA backscatter values were converted to absolute values and divided by 1000 values so that the VVxLIA values lie between 0 and 1, similar to the scale of the Sentinel-2 spectral bands}
+  \item{VHxL}{C-SAR backscatter for the vertical horizontal (VH) in dB values, multiplied by Local Angle of Incidence (LIA) from Sentinel-1 observations. The VHxL backscatter values were converted to absolute values and divided by 1000 values so that the VHxL values lie between 0 and 1, similar to the scale of the Sentinel-2 spectral bands}
+  \item{VVxL}{C-SAR backscatter for the vertical vertical (VV) in dB values, multiplied by Local Angle of Incidence (LIA) from Sentinel-1 observations. The VVxL backscatter values were converted to absolute values and divided by 1000 values so that the VVxL values lie between 0 and 1, similar to the scale of the Sentinel-2 spectral bands}
   \item{Ns}{Nitrate-nitrogen (NO3-N) measures the amount of available nitrogen in the soil that can be immediately taken up by plants. This value was determined in the soil profile 0-60 when sowing maize and expressed in kg per hectare in the laboratory. The Ns values were then divided by 1000 values so that the Ns values lie between 0 and 1, similar to the scale of the Sentinel-2 spectral bands}
   \item{B2_2}{B2 squared}
   \item{B3_2}{B3 squared}
@@ -43,8 +43,8 @@ A data frame with 56 rows and 23 columns:
   \item{B12_2}{B12 squared}
   \item{VH_2}{VH squared}
   \item{VV_2}{VV squared}
-  \item{VHxLIA_2}{VHxLIA squared}
-  \item{VVxLIA_2}{VVxLIA squared}
+  \item{VHxL_2}{VHxL squared}
+  \item{VVxL_2}{VVxL squared}
   \item{Ns_2}{Ns squared}
   
 }
