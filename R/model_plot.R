@@ -11,7 +11,6 @@
 #'
 #' @return The plot top five the best models
 #' 
-#' 
 #' @import ggplot2
 #' @import paletteer
 #' @import gridExtra
