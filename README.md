@@ -272,7 +272,8 @@ optical_indices(
 ```
 
 **Attention**  
-*set_bands* for the bands squared, e.g. B2$^{2}$, input as “B2_2”.  
+*set_bands* for the bands squared, e.g. B2<sup>2</sup>, input as
+“B2_2”.  
 *Scan* increases the number of selected vegetation indices, as each time
 the best correlation is saved, it is multiplied by scan. A lower scan
 value results in more vegetation indices, but this can also increase the
@@ -293,9 +294,10 @@ optical_Ns_indices(
 ```
 
 **Attention**  
-*set_bands* and col names when use of the bands squared, e.g. B2$^{2}$
-and Ns$^{2}$, input as “B2_2” and “Ns_2”. Furthermore, for Ns or other
-variables, e.g. lidar, use col name as “Ns”.  
+*set_bands* and col names when use of the bands squared,
+e.g. B2<sup>2</sup> and Ns<sup>2</sup>, input as “B2_2” and “Ns_2”.
+Furthermore, for Ns or other variables, e.g. lidar, use col name as
+“Ns”.  
 *Scan* increases the number of selected vegetation indices, as each time
 the best correlation is saved, it is multiplied by scan. A lower scan
 value results in more vegetation indices, but this can also increase the
@@ -316,8 +318,8 @@ optical_SAR_indices(
 ```
 
 **Attention**  
-*set_bands* and col names when use of the bands squared, e.g. B2$^{2}$
-and VH$^{2}$, input as “B2_2” and “VH_2”.  
+*set_bands* and col names when use of the bands squared,
+e.g. B2<sup>2</sup> and VH<sup>2</sup>, input as “B2_2” and “VH_2”.  
 *Scan* increases the number of selected vegetation indices, as each time
 the best correlation is saved, it is multiplied by scan. A lower scan
 value results in more vegetation indices, but this can also increase the
@@ -337,10 +339,10 @@ optical_SAR_Ns_indices(
 )
 ```
 
-*set_bands* and col names when use of the bands squared, e.g. B2$^{2}$,
-Ns$^{2}$, and VH$^{2}$, input as “B2_2”, “VH_2”, and “Ns_2”.
-Furthermore, for Ns or other variables, e.g. lidar, use col name as
-“Ns”.
+*set_bands* and col names when use of the bands squared,
+e.g. B2<sup>2</sup>, Ns<sup>2</sup>, and VH<sup>2</sup>, input as
+“B2_2”, “VH_2”, and “Ns_2”. Furthermore, for Ns or other variables,
+e.g. lidar, use col name as “Ns”.
 
 ##### Modeling selected vegetation indices with the *linear_model()* function
 
