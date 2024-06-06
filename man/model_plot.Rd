@@ -31,7 +31,7 @@ model_plot(
 
 \item{max_y_lim}{Maximum limit for the axis of the observable variable (y-axis) in the diagram, e.g. 1}
 
-\item{directory}{Directory path in which the results are saved, e.g. "C:/Users/Users/Downloads"}
+\item{directory}{Directory path in which the results are saved, e.g. "C:/Users/User/Downloads"}
 }
 \value{
 The plot top five the best models
@@ -62,7 +62,7 @@ NNI_V10_model = linear_model(
   train_exp = c(1, 2, 3, 4, 10, 11),   
   test_exp = c(5, 6, 7, 8, 9),  
   model_degree = 2,
-  metric = "kge",
+  metric = "rrmse",
   orcutt = 1, 
   cook_distance = 0
 )
@@ -75,7 +75,7 @@ shape = c(21,22,23,24,25),
 y_breaks = 5,
 min_y_lim = 0,
 max_y_lim = 2,
-directory = tempdir()
+directory = "C:/Users/User/Downloads" #tempdir()
 )
 
 }

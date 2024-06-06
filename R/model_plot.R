@@ -6,7 +6,7 @@
 #' @param y_breaks Number of breaks for the observable variable (y-axis) in the diagram, e.g. 5 for a range from 0 to 1, with the axis points marked at 0, 0.2, 0.4, 0.6, 0.8 and 1
 #' @param min_y_lim Minimum limit for the axis of the observable variable (y-axis) in the diagram, e.g. 0
 #' @param max_y_lim Maximum limit for the axis of the observable variable (y-axis) in the diagram, e.g. 1
-#' @param directory Directory path in which the results are saved, e.g. "C:/Users/Users/Downloads"
+#' @param directory Directory path in which the results are saved, e.g. "C:/Users/User/Downloads"
 #' @param lables_treat Vector indicating the sequence of labels treatment pauses, e.g. c("0 kg N/ha", "60 kg N/ha", "120 kg N/ha", "180 kg N/ha", "240 kg N/ha")
 #'
 #' @return The plot top five the best models
@@ -41,7 +41,7 @@
 #'   train_exp = c(1, 2, 3, 4, 10, 11),   
 #'   test_exp = c(5, 6, 7, 8, 9),  
 #'   model_degree = 2,
-#'   metric = "kge",
+#'   metric = "rrmse",
 #'   orcutt = 1, 
 #'   cook_distance = 0
 #' )
