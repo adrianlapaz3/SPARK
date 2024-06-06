@@ -40,8 +40,7 @@ library(knitr)
 ```
 
 
-<a id="fig-Figure1"></a>
-**Figure 1** The development process of the SPARK algorithm and shows the iteration over bands, their combinations, and the selection of vegetation indices using three available bands. The letters B represent the bands in the blue (B2), green (B3), and red (B4) spectrum of Sentinel-2. The nomenclature $VI_i$ corresponds to a vegetation index, $VI_{final}$ is the matrix of the selected vegetation indices, $\sum B_j$ and $\sum B_k$ are sums of the bands, $cor$ is a function that evaluates the correlation between two variables, $cor_{max}$ is the maximum recorded correlation, $exp_{trian(i)}$ and $exp_{test(i)}$ are the evaluated calibration and validation experiments, $RRMSE_{trian}$ and $RRMSE_{test}$ are the errors of the individual evaluated calibration and validation experiments, and $RRMSE_{best}$ is the error of the best model found ($model_{best}$).
+<a id="fig-Figure1"></a>**Figure 1** The development process of the SPARK algorithm and shows the iteration over bands, their combinations, and the selection of vegetation indices using three available bands. The letters B represent the bands in the blue (B2), green (B3), and red (B4) spectrum of Sentinel-2. The nomenclature $VI_i$ corresponds to a vegetation index, $VI_{final}$ is the matrix of the selected vegetation indices, $\sum B_j$ and $\sum B_k$ are sums of the bands, $cor$ is a function that evaluates the correlation between two variables, $cor_{max}$ is the maximum recorded correlation, $exp_{trian(i)}$ and $exp_{test(i)}$ are the evaluated calibration and validation experiments, $RRMSE_{trian}$ and $RRMSE_{test}$ are the errors of the individual evaluated calibration and validation experiments, and $RRMSE_{best}$ is the error of the best model found ($model_{best}$).
 
 [Figure 1](#fig-Figure1) shows how vegetation indices created from combinations of three bands are evaluated. An adequate representation of a multidimensional spectral space for scenes with vegetation is usually achieved with an optimal set of spectral data ("intrinsic dimensionality"). The use of more than four bands generally does not improve the information content of the study ([Swain and Davis, 1978, cited in Korobov and Railyan, 1993](#ref-Korobov1993)). Therefore, a maximum of four bands per constructed index is correct. However, other studies have used combinations of up to seven bands ([Dusek et al., 1985](#ref-Dusek1985)), so that up to five bands per index can be analyzed if necessary.
 
@@ -225,14 +224,12 @@ The results are saved in the computer as .svg, so it is necessary to enter the l
 
 **Example of the output for Train models selected**
 
-<a id="fig-Figure2"></a>
-**Figure 2** The five best models selected for monitoring the nitrogen-nutrient index (NNI) in maize data fusion vegetation indices (optical_SAR_Ns_indices) at the stage of the tenth leaf of the crop maize expanded. The letters B correspond to the blue (B2), green (B3), red (B4), red edge (B5, B6, B7), near-infrared (B8, B8A) and shortwave infrared (B11, B12) bands of the Sentinel-2 spectrum. VH (vertical-horizontal) and VV (vertical-vertical) are the Sentinel-1 C-SAR backscatter values in absolute decibels divided by 100, between 0 and 1. In addition, VVxL and VHxL represent the VV and VH backscatter values multiplied by the local incidence angle in degrees (LIA) and divided by 1,000 in absolute values between 0 and 1. Ns stands for the soil nitrogen in kg ha$^{-1}$ for the soil nitrogen ($NO_{3}^{-}$-N) at a depth of 60 cm divided by 1,000, also in the range from 0 to 1.
+<a id="fig-Figure2"></a>**Figure 2** The five best models selected for monitoring the nitrogen-nutrient index (NNI) in maize data fusion vegetation indices (optical_SAR_Ns_indices) at the stage of the tenth leaf of the crop maize expanded. The letters B correspond to the blue (B2), green (B3), red (B4), red edge (B5, B6, B7), near-infrared (B8, B8A) and shortwave infrared (B11, B12) bands of the Sentinel-2 spectrum. VH (vertical-horizontal) and VV (vertical-vertical) are the Sentinel-1 C-SAR backscatter values in absolute decibels divided by 100, between 0 and 1. In addition, VVxL and VHxL represent the VV and VH backscatter values multiplied by the local incidence angle in degrees (LIA) and divided by 1,000 in absolute values between 0 and 1. Ns stands for the soil nitrogen in kg ha$^{-1}$ for the soil nitrogen ($NO_{3}^{-}$-N) at a depth of 60 cm divided by 1,000, also in the range from 0 to 1.
 
 **Example of the output for Test models selected**
 The preceding number **0** means that this band is not used for the calculation of the vegetation index at this point, e.g. (B8+0B3-B4)/(B8+B3+B4), correctly written this is (B8-B4)/(B8+B3+B4).
 
-<a id="fig-Figure3"></a>
-**Figure 3** Test The five best models selected for monitoring the nitrogen-nutrient index (NNI) in maize data fusion vegetation indices (optical_SAR_Ns_indices) at the stage of the tenth leaf of the crop maize expanded.RMSE: Root Mean Square Error. RRMSE: RMSE relative to the observed mean. MAE: Mean absolute error. MAPE: Mean absolute percentage error. The errors represent the average of the five experiments.
+<a id="fig-Figure3"></a>**Figure 3** Test The five best models selected for monitoring the nitrogen-nutrient index (NNI) in maize data fusion vegetation indices (optical_SAR_Ns_indices) at the stage of the tenth leaf of the crop maize expanded.RMSE: Root Mean Square Error. RRMSE: RMSE relative to the observed mean. MAE: Mean absolute error. MAPE: Mean absolute percentage error. The errors represent the average of the five experiments.
 
 #### Example
 
@@ -283,7 +280,7 @@ model_plot(
   y_breaks = 5,
   min_y_lim = 0,
   max_y_lim = 2,
-  directory = "."  # Put a directory for the example
+  directory = tempdir()  # Put a directory for the example
 )
 
 ```

@@ -73,7 +73,7 @@ error obtained in each calibration and validation experiment (see
 selected for the final model (see example in [Figure 2](#fig-Figure2)
 and [Figure 3](#fig-Figure3)).
 
-<a id="fig-Figure1"></a> **Figure 1** The development process of the
+<a id="fig-Figure1"></a>**Figure 1** The development process of the
 SPARK algorithm and shows the iteration over bands, their combinations,
 and the selection of vegetation indices using three available bands. The
 letters B represent the bands in the blue (B2), green (B3), and red (B4)
@@ -361,7 +361,7 @@ and test ([Figure 3](#fig-Figure3)) models there
 
 **Example of the output for Train models selected**
 
-<a id="fig-Figure2"></a> **Figure 2** The five best models selected for
+<a id="fig-Figure2"></a>**Figure 2** The five best models selected for
 monitoring the nitrogen-nutrient index (NNI) in maize data fusion
 vegetation indices (optical_SAR_Ns_indices) at the stage of the tenth
 leaf of the crop maize expanded. The letters B correspond to the blue
@@ -380,7 +380,7 @@ a depth of 60 cm divided by 1,000, also in the range from 0 to 1.
 vegetation index at this point, e.g. (B8+0B3-B4)/(B8+B3+B4), correctly
 written this is (B8-B4)/(B8+B3+B4).
 
-<a id="fig-Figure3"></a> **Figure 3** Test The five best models selected
+<a id="fig-Figure3"></a>**Figure 3** Test The five best models selected
 for monitoring the nitrogen-nutrient index (NNI) in maize data fusion
 vegetation indices (optical_SAR_Ns_indices) at the stage of the tenth
 leaf of the crop maize expanded.RMSE: Root Mean Square Error. RRMSE:
@@ -443,7 +443,7 @@ model_plot(
   y_breaks = 5,
   min_y_lim = 0,
   max_y_lim = 2,
-  directory = "."  # Put a directory for the example
+  directory = tempdir()  # Put a directory for the example
 )
 #> [1] "The parameters of Model 1 were calculated using the iterative Cochrane-Orcutt"
 ```

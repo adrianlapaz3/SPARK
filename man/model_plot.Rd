@@ -13,7 +13,7 @@ model_plot(
   y_breaks = 5,
   min_y_lim = NULL,
   max_y_lim = NULL,
-  directory = "./"
+  directory = "."
 )
 }
 \arguments{
@@ -75,7 +75,7 @@ shape = c(21,22,23,24,25),
 y_breaks = 5,
 min_y_lim = 0,
 max_y_lim = 2,
-directory = "C:/Users/User/Downloads"
+directory = tempdir()
 )
 
 }

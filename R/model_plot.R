@@ -54,7 +54,7 @@
 #' y_breaks = 5,
 #' min_y_lim = 0,
 #' max_y_lim = 2,
-#' directory = "."
+#' directory = tempdir()
 #' )
 #' 
 model_plot = function(models = models,  
