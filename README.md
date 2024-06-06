@@ -69,7 +69,7 @@ error obtained in each calibration and validation experiment (see
 selected for the final model (see example in [Figure 2](#fig-Figure2)
 and [Figure 3](#fig-Figure3)).
 
-![1](./man/figures/combination_bands.png)  
+![1](/man/figures/combination_bands.png)  
 <a id="fig-Figure1"></a>**Figure 1** The development process of the
 SPARK algorithm and shows the iteration over bands, their combinations,
 and the selection of vegetation indices using three available bands. The
@@ -357,7 +357,7 @@ enter the link of the directory and the train ([Figure 2](#fig-Figure2))
 and test ([Figure 3](#fig-Figure3)) models there.
 
 **Example of the output for Train models selected**  
-![2](./man/figures/Train_Models.svg)  
+![2](man/figures/Train_Models.svg)  
 <a id="fig-Figure2"></a>**Figure 2** The five best models selected for
 monitoring the nitrogen-nutrient index (NNI) in maize data fusion
 vegetation indices (optical_SAR_Ns_indices) at the stage of the tenth
