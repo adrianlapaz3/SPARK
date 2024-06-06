@@ -292,9 +292,10 @@ optical_Ns_indices(
 )
 ```
 
-**Attention** *set_bands* and col names when use of the bands squared,
-e.g. B2$^{2}$ and Ns$^{2}$, input as “B2_2” and “Ns_2”. Furthermore, for
-Ns or other variables, e.g. lidar, use col name as “Ns”.  
+**Attention**  
+*set_bands* and col names when use of the bands squared, e.g. B2$^{2}$
+and Ns$^{2}$, input as “B2_2” and “Ns_2”. Furthermore, for Ns or other
+variables, e.g. lidar, use col name as “Ns”.  
 *Scan* increases the number of selected vegetation indices, as each time
 the best correlation is saved, it is multiplied by scan. A lower scan
 value results in more vegetation indices, but this can also increase the
@@ -314,8 +315,9 @@ optical_SAR_indices(
 )
 ```
 
-**Attention** *set_bands* and col names when use of the bands squared,
-e.g. B2$^{2}$ and VH$^{2}$, input as “B2_2” and “VH_2”.  
+**Attention**  
+*set_bands* and col names when use of the bands squared, e.g. B2$^{2}$
+and VH$^{2}$, input as “B2_2” and “VH_2”.  
 *Scan* increases the number of selected vegetation indices, as each time
 the best correlation is saved, it is multiplied by scan. A lower scan
 value results in more vegetation indices, but this can also increase the
