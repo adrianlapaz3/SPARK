@@ -18,8 +18,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/adrianlapaz3/SPARK/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/adrianlapaz3/SPARK/actions/workflows/R-CMD-check.yaml)
 [![Codecov test coverage](https://codecov.io/gh/adrianlapaz3/SPARK/branch/main/graph/badge.svg)](https://app.codecov.io/gh/adrianlapaz3/SPARK?branch=main)
-[![License](https://img.shields.io/github/license/USER/REPO.svg)](https://github.com/USER/REPO/blob/main/LICENSE)
-[![Version](https://github.com/USER/REPO/releases)](https://img.shields.io/github/v/release/USER/REPO.svg)
+[![License: MIT](https://img.shields.io/badge/License-MIT-red.svg)](https://opensource.org/licenses/MIT)
 [![CRAN status](https://www.r-pkg.org/badges/version/SPARK)](https://CRAN.R-project.org/package=SPARK)
 <!-- badges: end -->
 
