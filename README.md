@@ -73,12 +73,6 @@ error obtained in each calibration and validation experiment (see
 selected for the final model (see example in [Figure 2](#fig-Figure2)
 and [Figure 3](#fig-Figure3)).
 
-<div style="text-align: center;">
-
-<img src="C:/Users/User/Downloads/combination_bands.png" type="image/svg+xml" style="width: 100%; height: auto;" />
-
-</div>
-
 <a id="fig-Figure1"></a> **Figure 1** The development process of the
 SPARK algorithm and shows the iteration over bands, their combinations,
 and the selection of vegetation indices using three available bands. The
@@ -367,12 +361,6 @@ and test ([Figure 3](#fig-Figure3)) models there
 
 **Example of the output for Train models selected**
 
-<div style="text-align: center;">
-
-<embed src="file:///C:/Users/User/Downloads/Train_Models.svg" type="image/svg+xml" style="width: 100%; height: auto;" />
-
-</div>
-
 <a id="fig-Figure2"></a> **Figure 2** The five best models selected for
 monitoring the nitrogen-nutrient index (NNI) in maize data fusion
 vegetation indices (optical_SAR_Ns_indices) at the stage of the tenth
@@ -391,12 +379,6 @@ a depth of 60 cm divided by 1,000, also in the range from 0 to 1.
 **0** means that this band is not used for the calculation of the
 vegetation index at this point, e.g. (B8+0B3-B4)/(B8+B3+B4), correctly
 written this is (B8-B4)/(B8+B3+B4).
-
-<div style="text-align: center;">
-
-<embed src="file:///C:/Users/User/Downloads/Test_Models.svg" type="image/svg+xml" style="width: 100%; height: auto;" />
-
-</div>
 
 <a id="fig-Figure3"></a> **Figure 3** Test The five best models selected
 for monitoring the nitrogen-nutrient index (NNI) in maize data fusion
@@ -461,7 +443,7 @@ model_plot(
   y_breaks = 5,
   min_y_lim = 0,
   max_y_lim = 2,
-  directory = "C:/Users/User/Downloads"  # Put a directory for the example
+  directory = "."  # Put a directory for the example
 )
 #> [1] "The parameters of Model 1 were calculated using the iterative Cochrane-Orcutt"
 ```
