@@ -54,7 +54,7 @@
 #' y_breaks = 5,
 #' min_y_lim = 0,
 #' max_y_lim = 2,
-#' directory = "C:/Users/User/Downloads"
+#' directory = "."
 #' )
 #' 
 model_plot = function(models = models,  
@@ -64,7 +64,7 @@ model_plot = function(models = models,
                       y_breaks = 5,
                       min_y_lim = NULL,
                       max_y_lim = NULL,
-                      directory = "./"){
+                      directory = "."){
   
   suppressWarnings({
     
