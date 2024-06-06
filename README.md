@@ -173,7 +173,10 @@ $$
 
 $$
 \gamma = \frac{\frac{\sigma_{pred}}{\mu_{pred}}}{\frac{\sigma_{obs}}{\mu_{obs}}}
-$$ Where: - $\sigma_{pred}$ is calculated as
+$$
+
+Where:  
+- $\sigma_{pred}$ is calculated as
 ($\sqrt{\frac{1}{n} \sum_{i=1}^{n} (pred_i - \mu_{pred})^2}$)  
 - $\sigma_{obs}$ is calculated as
 ($\sqrt{\frac{1}{n} \sum_{i=1}^{n} (obs_i - \mu_{obs})^2}$)
