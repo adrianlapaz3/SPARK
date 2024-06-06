@@ -118,8 +118,8 @@ values can be evaluated quadratically.
 #### Metrics Used to Select Models
 
 The metrics used by the algorithm to select the models are root mean
-square error (RMSE), relative root mean square error (RRMSE), mean
-absolute error (MAE), mean absolute percentage error (MAPE), and
+square error (RMSE), relative root mean square error (RRMSE, %), mean
+absolute error (MAE), mean absolute percentage error (MAPE, %), and
 Kling-Gupta Model Efficiency (KGE) ([Kling et al.,
 2012](#ref-Kling2012); [Correndo et al., 2022](#ref-Correndo2022)).
 

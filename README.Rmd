@@ -52,7 +52,7 @@ The selected indices are then evaluated with the observed variable in first- and
 The vegetation indices are calculated using the spectral bands (e.g., B2, B3, B4, B5, B6, B7, B8, B8A, B11 and B12 for Sentinel-2). For the data fusion, these bands are merged with the nitrogen soil (Ns) and the radar backscatter, such as the C-SAR backscatter of Sentinel-1, uncorrected or corrected for the local angle of incidence (VHxL and VVxL). For example, the VH and VV backscatter values in absolute decibel values are divided by 100 and the VHxL and VVxL values in absolute values are divided by 1,000. This step normalizes the VH and VV values between 0 and 1, similar to the scale of the Sentinel-2 spectral bands. In addition, both the spectral bands and the normalized backscatter values can be evaluated quadratically.  
 
 #### Metrics Used to Select Models
-The metrics used by the algorithm to select the models are root mean square error (RMSE), relative root mean square error (RRMSE), mean absolute error (MAE), mean absolute percentage error (MAPE), and Kling-Gupta Model Efficiency (KGE) ([Kling et al., 2012](#ref-Kling2012); [Correndo et al., 2022](#ref-Correndo2022)).  
+The metrics used by the algorithm to select the models are root mean square error (RMSE), relative root mean square error (RRMSE, %), mean absolute error (MAE), mean absolute percentage error (MAPE, %), and Kling-Gupta Model Efficiency (KGE) ([Kling et al., 2012](#ref-Kling2012); [Correndo et al., 2022](#ref-Correndo2022)).  
 
 *Root Mean Square Error (RMSE)*  
   
