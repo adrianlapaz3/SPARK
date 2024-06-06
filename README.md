@@ -128,7 +128,7 @@ $$
 *Relative Root Mean Square Error (RRMSE)*
 
 $$
-RRMSE = \frac{\sqrt{\frac{1}{n} \sum_{i=1}^{n} (pred_i - obs_i)^2}}{\frac{1}{n} \sum_{i=1}^{n} obs_i} \times 100
+RRMSE = \frac{\sqrt{\frac{1}{n} \sum_{i=1}^{n} \left| (pred_i - obs_i)^2}}{\frac{1}{n} \sum_{i=1}^{n} obs_i} \times 100
 $$
 
 *Mean Absolute Error (MAE)*
@@ -156,7 +156,7 @@ Where:
   as:
 
 $$
-r = \frac{\sum_{i=1}^{n} (pred_i - \mu_{pred})(obs_i - \mu_{obs})}{\sqrt{\sum_{i=1}^{n} (pred_i - \mu_{pred})^2 \sum_{i=1}^{n} (obs_i - \mu_{obs})^2}}
+r = \frac{\sum_{i=1}^{n} \left| (pred_i - \mu_{pred})(obs_i - \mu_{obs})}{\sqrt{\sum_{i=1}^{n} (pred_i - \mu_{pred})^2 \sum_{i=1}^{n} (obs_i - \mu_{obs})^2}}
 $$
 
 - $\beta$ is the ratio between the mean of the predictions
@@ -177,9 +177,9 @@ $$
 
 Where:  
 - $\sigma_{pred}$ is calculated as
-($\sqrt{\frac{1}{n} \sum_{i=1}^{n} (pred_i - \mu_{pred})^2}$)  
+($\sqrt{\frac{1}{n} \sum_{i=1}^{n} \left| (pred_i - \mu_{pred})^2}$)  
 - $\sigma_{obs}$ is calculated as
-($\sqrt{\frac{1}{n} \sum_{i=1}^{n} (obs_i - \mu_{obs})^2}$)
+($\sqrt{\frac{1}{n} \sum_{i=1}^{n} \left| (obs_i - \mu_{obs})^2}$)
 
 ## SPARK package and use
 
