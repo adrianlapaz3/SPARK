@@ -46,7 +46,7 @@ vegetation indices. Instead, the combinations of bands are evaluated in
 a mathematical formula:
 
 $$
-VI_i = \dfrac{\sum B_j \times c}{\sum B_k \times c}
+VI_i = \frac{\sum B_j \times c}{\sum B_k \times c}
 $$
 
 where $VI_i$ is a vegetation index, $B_j$ and $B_k$ are the different
@@ -126,25 +126,25 @@ Kling-Gupta Model Efficiency (KGE) ([Kling et al.,
 *Root Mean Square Error (RMSE)*
 
 $$
-RMSE = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (pred_i - obs_i)^2}
+RMSE = \sqrt{\frac{1}{n} \sum (pred_i - obs_i)^2}
 $$
 
 *Relative Root Mean Square Error (RRMSE)*
 
 $$
-RRMSE = \dfrac{\sqrt{\dfrac{1}{n} \sum_{i=1}^{n} (pred_i - obs_i)^2}}{\dfrac{1}{n} \sum_{i=1}^{n} obs_i} \times 100
+RRMSE (\%) = \frac{\sqrt{\frac{1}{n} \sum (pred_i - obs_i)^2}}{\frac{1}{n} \sum obs_i} \times 100
 $$
 
 *Mean Absolute Error (MAE)*
 
 $$
-MAE = \frac{1}{n} \sum_{i=1}^{n} |pred_i - obs_i|
+MAE = \frac{1}{n} \sum |pred_i - obs_i|
 $$
 
 *Mean Absolute Percentage Error (MAPE)*
 
 $$
-MAPE = \frac{1}{n} \sum_{i=1}^{n} \left| \frac{obs_i - pred_i}{obs_i} \right| \times 100
+MAPE (\%) = \frac{1}{n} \sum \left| \frac{obs_i - pred_i}{obs_i} \right| \times 100
 $$
 
 *Kling-Gupta Model Efficiency (KGE)*
@@ -156,12 +156,7 @@ $$
 Where:
 
 - $r$ is the Pearson correlation coefficient between predictions and
-  observations. The Pearson correlation coefficient ($r$) is calculated
-  as:
-
-$$
-r = \dfrac{\sum_{i=1}^{n}{(pred_i - \mu_{pred})(obs_i - \mu_{obs})}}{\sqrt{\sum_{i=1}^{n}{(pred_i - \mu_{pred})^2 \sum_{i=1}^{n} (obs_i - \mu_{obs})^2}}}
-$$
+  observations.
 
 - $\beta$ is the ratio between the mean of the predictions
   ($\mu_{pred}$) and the mean of the observations ($\mu_{obs}$).
@@ -181,9 +176,9 @@ $$
 
 Where:  
 - $\sigma_{pred}$ is calculated as
-$\sigma_{pred} = \sqrt{\dfrac{1}{n} \sum_{i=1}^{n} (pred_i - \mu_{pred})^2}$  
+$\sigma_{pred} = \sqrt{\frac{1}{n} \sum (pred_i - \mu_{pred})^2}$  
 - $\sigma_{obs}$ is calculated as
-$\sigma_{obs} = \sqrt{\dfrac{1}{n} \sum_{i=1}^{n} (obs_i - \mu_{obs})^2}$
+$\sigma_{obs} = \sqrt{\frac{1}{n} \sum (obs_i - \mu_{obs})^2}$
 
 ## SPARK package and use
 
