@@ -1361,8 +1361,6 @@ model_plot = function(models = models,
              ), nrow = 2, ncol = 2),
              width = 13.2, height = 12.5, units = "cm")}
     
-    
-    
     if(n_models==2) {
       
       ggsave(filename = file.path(directory, "Train_Models.svg"), dpi = 1000, limitsize = F,
