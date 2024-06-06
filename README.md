@@ -119,27 +119,32 @@ absolute error (MAE), mean absolute percentage error (MAPE), and
 Kling-Gupta Model Efficiency (KGE) ([Kling et al.,
 2012](#ref-Kling2012); [Correndo et al., 2022](#ref-Correndo2022)).
 
-*Root Mean Square Error (RMSE)*  
+*Root Mean Square Error (RMSE)*
+
 $$
 RMSE = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (pred_i - obs_i)^2}
 $$
 
-*Relative Root Mean Square Error (RRMSE)*  
+*Relative Root Mean Square Error (RRMSE)*
+
 $$
 RRMSE = \frac{\sqrt{\frac{1}{n} \sum_{i=1}^{n} (pred_i - obs_i)^2}}{\frac{1}{n} \sum_{i=1}^{n} obs_i} \times 100
 $$
 
-*Mean Absolute Error (MAE)*  
+*Mean Absolute Error (MAE)*
+
 $$
 MAE = \frac{1}{n} \sum_{i=1}^{n} |pred_i - obs_i|
 $$
 
-*Mean Absolute Percentage Error (MAPE)*  
+*Mean Absolute Percentage Error (MAPE)*
+
 $$
 MAPE = \frac{1}{n} \sum_{i=1}^{n} \left| \frac{obs_i - pred_i}{obs_i} \right| \times 100
 $$
 
-*Kling-Gupta Model Efficiency (KGE)*  
+*Kling-Gupta Model Efficiency (KGE)*
+
 $$
 KGE' = 1 - \sqrt{(r - 1)^2 + (\gamma - 1)^2 + (\beta - 1)^2}
 $$
@@ -148,10 +153,11 @@ Where:
 
 - $r$ is the Pearson correlation coefficient between predictions and
   observations. The Pearson correlation coefficient ($r$) is calculated
-  as:  
-  $$
-  r = \frac{\sum_{i=1}^{n} (pred_i - \mu_{pred})(obs_i - \mu_{obs})}{\sqrt{\sum_{i=1}^{n} (pred_i - \mu_{pred})^2 \sum_{i=1}^{n} (obs_i - \mu_{obs})^2}}
-  $$
+  as:
+
+$$
+r = \frac{\sum_{i=1}^{n} (pred_i - \mu_{pred})(obs_i - \mu_{obs})}{\sqrt{\sum_{i=1}^{n} (pred_i - \mu_{pred})^2 \sum_{i=1}^{n} (obs_i - \mu_{obs})^2}}
+$$
 
 - $\beta$ is the ratio between the mean of the predictions
   ($\mu_{pred}$) and the mean of the observations ($\mu_{obs}$).
