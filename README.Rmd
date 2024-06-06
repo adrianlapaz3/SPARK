@@ -63,7 +63,7 @@ $$
 *Relative Root Mean Square Error (RRMSE)*  
   
 $$
-RRMSE (\%) = \frac{\sqrt{\frac{1}{n} \sum (pred_i - obs_i)^2}}{\frac{1}{n} \sum obs_i} \times 100
+RRMSE = \frac{\sqrt{\frac{1}{n} \sum (pred_i - obs_i)^2}}{\frac{1}{n} \sum obs_i} \times 100
 $$
 
 *Mean Absolute Error (MAE)*  
@@ -75,7 +75,7 @@ $$
 *Mean Absolute Percentage Error (MAPE)*  
   
 $$
-MAPE (\%) = \frac{1}{n} \sum \left| \frac{obs_i - pred_i}{obs_i} \right| \times 100
+MAPE = \frac{1}{n} \sum \left| \frac{obs_i - pred_i}{obs_i} \right| \times 100
 $$
 
 *Kling-Gupta Model Efficiency (KGE)*  
