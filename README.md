@@ -69,7 +69,8 @@ error obtained in each calibration and validation experiment (see
 selected for the final model (see example in [Figure 2](#fig-Figure2)
 and [Figure 3](#fig-Figure3)).
 
-![1](./man/figures/combination_bands.png)  
+![](./man/figures/combination_bands.png)
+
 <a id="fig-Figure1"></a>**Figure 1** The development process of the
 SPARK algorithm and shows the iteration over bands, their combinations,
 and the selection of vegetation indices using three available bands. The
@@ -118,23 +119,28 @@ absolute error (MAE), mean absolute percentage error (MAPE), and
 Kling-Gupta Model Efficiency (KGE) ([Kling et al.,
 2012](#ref-Kling2012); [Correndo et al., 2022](#ref-Correndo2022)).
 
-*Root Mean Square Error (RMSE)* $$
+*Root Mean Square Error (RMSE)*  
+$$
 RMSE = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (pred_i - obs_i)^2}
 $$
 
-*Relative Root Mean Square Error (RRMSE)* $$
+*Relative Root Mean Square Error (RRMSE)*  
+$$
 RRMSE = \frac{\sqrt{\frac{1}{n} \sum_{i=1}^{n} (pred_i - obs_i)^2}}{\frac{1}{n} \sum_{i=1}^{n} obs_i} \times 100
 $$
 
-*Mean Absolute Error (MAE)* $$
+*Mean Absolute Error (MAE)*  
+$$
 MAE = \frac{1}{n} \sum_{i=1}^{n} |pred_i - obs_i|
 $$
 
-*Mean Absolute Percentage Error (MAPE)* $$
+*Mean Absolute Percentage Error (MAPE)*  
+$$
 MAPE = \frac{1}{n} \sum_{i=1}^{n} \left| \frac{obs_i - pred_i}{obs_i} \right| \times 100
 $$
 
-*Kling-Gupta Model Efficiency (KGE)* $$
+*Kling-Gupta Model Efficiency (KGE)*  
+$$
 KGE' = 1 - \sqrt{(r - 1)^2 + (\gamma - 1)^2 + (\beta - 1)^2}
 $$
 
@@ -142,7 +148,8 @@ Where:
 
 - $r$ is the Pearson correlation coefficient between predictions and
   observations. The Pearson correlation coefficient ($r$) is calculated
-  as: $$
+  as:  
+  $$
   r = \frac{\sum_{i=1}^{n} (pred_i - \mu_{pred})(obs_i - \mu_{obs})}{\sqrt{\sum_{i=1}^{n} (pred_i - \mu_{pred})^2 \sum_{i=1}^{n} (obs_i - \mu_{obs})^2}}
   $$
 
@@ -161,8 +168,8 @@ $$
 $$
 \gamma = \frac{\frac{\sigma_{pred}}{\mu_{pred}}}{\frac{\sigma_{obs}}{\mu_{obs}}}
 $$ Where: - $\sigma_{pred}$ is calculated as
-($\sqrt{\frac{1}{n} \sum_{i=1}^{n} (pred_i - \mu_{pred})^2}$) -
-$\sigma_{obs}$ is calculated as
+($\sqrt{\frac{1}{n} \sum_{i=1}^{n} (pred_i - \mu_{pred})^2}$)  
+- $\sigma_{obs}$ is calculated as
 ($\sqrt{\frac{1}{n} \sum_{i=1}^{n} (obs_i - \mu_{obs})^2}$)
 
 ## SPARK package and use
@@ -357,7 +364,8 @@ enter the link of the directory and the train ([Figure 2](#fig-Figure2))
 and test ([Figure 3](#fig-Figure3)) models there.
 
 **Example of the output for Train models selected**  
-![2](./man/figures/Train_Models.svg)  
+![](./man/figures/Train_Models.svg)
+
 <a id="fig-Figure2"></a>**Figure 2** The five best models selected for
 monitoring the nitrogen-nutrient index (NNI) in maize data fusion
 vegetation indices (optical_SAR_Ns_indices) at the stage of the tenth
@@ -378,7 +386,8 @@ e.g. (B8+0B3-B4)/(B8+B3+B4), correctly written this is
 (B8-B4)/(B8+B3+B4).
 
 **Example of the output for Test models selected**  
-![3](./man/figures/Test_Models.svg)  
+![3](./man/figures/Test_Models.svg)
+
 <a id="fig-Figure3"></a>**Figure 3** Test The five best models selected
 for monitoring the nitrogen-nutrient index (NNI) in maize data fusion
 vegetation indices (optical_SAR_Ns_indices) at the stage of the tenth
