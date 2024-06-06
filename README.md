@@ -398,7 +398,7 @@ experiments.
 
 #### Example
 
-This is a basic example which shows you how to solve a common problem:
+This is a basic example which shows you how to solve a common problem:  
 **Attention** The results in this example appear incorrectly formatted.
 The final results should look like those in [Figure 2](#fig-Figure2) and
 test [Figure 3](#fig-Figure3).
