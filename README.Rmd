@@ -90,7 +90,7 @@ Where:
 The Pearson correlation coefficient ($r$) is calculated as:  
 
 $$
-r = \dfrac{\sum_{i=1}^{n} (pred_i - \mu_{pred})(obs_i - \mu_{obs})}{\sqrt{\sum_{i=1}^{n} (pred_i - \mu_{pred})^2 \sum_{i=1}^{n} (obs_i - \mu_{obs})^2}}
+r = \dfrac{\sum_{i=1}^{n}{(pred_i - \mu_{pred})(obs_i - \mu_{obs})}}{\sqrt{\sum_{i=1}^{n}{(pred_i - \mu_{pred})^2 \sum_{i=1}^{n} (obs_i - \mu_{obs})^2}}}
 $$
 
 - $\beta$ is the ratio between the mean of the predictions ($\mu_{pred}$) and the mean of the observations ($\mu_{obs}$).  
