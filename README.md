@@ -44,9 +44,13 @@ work ([Dusek et al., 1985](#ref-Dusek1985); [Xie et al.,
 2014](#ref-Xie2014)). This method does not assume specific bands or
 vegetation indices. Instead, the combinations of bands are evaluated in
 a mathematical formula:
-$VI_i = \frac{\sum B_j \times c}{\sum B_k \times c}$ where $VI_i$ is a
-vegetation index, $B_j$ and $B_k$ are the different groups of evaluated
-bands and $c$ are the coefficients -1, 0 and 1.
+
+$$
+VI_i = \dfrac{\sum B_j \times c}{\sum B_k \times c}
+$$
+
+where $VI_i$ is a vegetation index, $B_j$ and $B_k$ are the different
+groups of evaluated bands and $c$ are the coefficients -1, 0 and 1.
 
 In this procedure, the bands are iterated, combined with each other, and
 the result of the equation is evaluated with the observed variable
@@ -79,9 +83,9 @@ spectrum of Sentinel-2. The nomenclature $VI_i$ corresponds to a
 vegetation index, $VI_{final}$ is the matrix of the selected vegetation
 indices, $\sum B_j$ and $\sum B_k$ are sums of the bands, $cor$ is a
 function that evaluates the correlation between two variables,
-$cor_{max}$ is the maximum recorded correlation, $exp_{trian(i)}$ and
+$cor_{max}$ is the maximum recorded correlation, $exp_{train(i)}$ and
 $exp_{test(i)}$ are the evaluated calibration and validation
-experiments, $RRMSE_{trian}$ and $RRMSE_{test}$ are the errors of the
+experiments, $RRMSE_{train}$ and $RRMSE_{test}$ are the errors of the
 individual evaluated calibration and validation experiments, and
 $RRMSE_{best}$ is the error of the best model found ($model_{best}$).
 
@@ -128,7 +132,7 @@ $$
 *Relative Root Mean Square Error (RRMSE)*
 
 $$
-RRMSE = \frac{\sqrt{\frac{1}{n} \sum_{i=1}^{n} (pred_i - obs_i)^2}}{\frac{1}{n} \sum_{i=1}^{n} obs_i} \times 100
+RRMSE = \dfrac{\sqrt{\dfrac{1}{n} \sum_{i=1}^{n} (pred_i - obs_i)^2}}{\dfrac{1}{n} \sum_{i=1}^{n} obs_i} \times 100
 $$
 
 *Mean Absolute Error (MAE)*
@@ -156,7 +160,7 @@ Where:
   as:
 
 $$
-r = \frac{\sum_{i=1}^{n} (pred_i - \mu_{pred})(obs_i - \mu_{obs})}{\sqrt{\sum_{i=1}^{n} (pred_i - \mu_{pred})^2 \sum_{i=1}^{n} (obs_i - \mu_{obs})^2}}
+r = \dfrac{\sum_{i=1}^{n} (pred_i - \mu_{pred})(obs_i - \mu_{obs})}{\sqrt{\sum_{i=1}^{n} (pred_i - \mu_{pred})^2 \sum_{i=1}^{n} (obs_i - \mu_{obs})^2}}
 $$
 
 - $\beta$ is the ratio between the mean of the predictions
@@ -177,9 +181,9 @@ $$
 
 Where:  
 - $\sigma_{pred}$ is calculated as
-($\sqrt{\frac{1}{n} \sum_{i=1}^{n} (pred_i - \mu_{pred})^2}$)  
+$\sigma_{pred} = \sqrt{\dfrac{1}{n} \sum_{i=1}^{n} (pred_i - \mu_{pred})^2}$  
 - $\sigma_{obs}$ is calculated as
-($\sqrt{\frac{1}{n} \sum_{i=1}^{n} (obs_i - \mu_{obs})^2}$)
+$\sigma_{obs} = \sqrt{\dfrac{1}{n} \sum_{i=1}^{n} (obs_i - \mu_{obs})^2}$
 
 ## SPARK package and use
 
@@ -267,13 +271,14 @@ optical_indices(
 )
 ```
 
-**Attention** *set_bands* for the bands squared, e.g. B2$^{2}$, input as
-“B2_2” *Scan* increases the number of selected vegetation indices, as
-each time the best correlation is saved, it is multiplied by scan. A
-lower scan value results in more vegetation indices, but this can also
-increase the execution time and generate too many vegetation indices. It
-is recommended to increase the scan value from 0.85 to 1, although
-higher values (around 0.95-1) should be used if there are many bands.
+**Attention**  
+*set_bands* for the bands squared, e.g. B2$^{2}$, input as “B2_2”.  
+*Scan* increases the number of selected vegetation indices, as each time
+the best correlation is saved, it is multiplied by scan. A lower scan
+value results in more vegetation indices, but this can also increase the
+execution time and generate too many vegetation indices. It is
+recommended to increase the scan value from 0.85 to 1, although higher
+values (around 0.95-1) should be used if there are many bands.
 
 ##### Data fusion with spectral bands and radar soil nitrogen (Ns) with the *optical_Ns_indices()* function
 
@@ -289,10 +294,10 @@ optical_Ns_indices(
 
 **Attention** *set_bands* and col names when use of the bands squared,
 e.g. B2$^{2}$ and Ns$^{2}$, input as “B2_2” and “Ns_2”. Furthermore, for
-Ns or other variables, e.g. lidar, use col name as “Ns” *Scan* increases
-the number of selected vegetation indices, as each time the best
-correlation is saved, it is multiplied by scan. A lower scan value
-results in more vegetation indices, but this can also increase the
+Ns or other variables, e.g. lidar, use col name as “Ns”.  
+*Scan* increases the number of selected vegetation indices, as each time
+the best correlation is saved, it is multiplied by scan. A lower scan
+value results in more vegetation indices, but this can also increase the
 execution time and generate too many vegetation indices. It is
 recommended to increase the scan value from 0.85 to 1, although higher
 values (around 0.95-1) should be used if there are many bands.
@@ -310,10 +315,10 @@ optical_SAR_indices(
 ```
 
 **Attention** *set_bands* and col names when use of the bands squared,
-e.g. B2$^{2}$ and VH$^{2}$, input as “B2_2” and “VH_2”. *Scan* increases
-the number of selected vegetation indices, as each time the best
-correlation is saved, it is multiplied by scan. A lower scan value
-results in more vegetation indices, but this can also increase the
+e.g. B2$^{2}$ and VH$^{2}$, input as “B2_2” and “VH_2”.  
+*Scan* increases the number of selected vegetation indices, as each time
+the best correlation is saved, it is multiplied by scan. A lower scan
+value results in more vegetation indices, but this can also increase the
 execution time and generate too many vegetation indices. It is
 recommended to increase the scan value from 0.85 to 1, although higher
 values (around 0.95-1) should be used if there are many bands.
@@ -332,7 +337,8 @@ optical_SAR_Ns_indices(
 
 *set_bands* and col names when use of the bands squared, e.g. B2$^{2}$,
 Ns$^{2}$, and VH$^{2}$, input as “B2_2”, “VH_2”, and “Ns_2”.
-Furthermore, for Ns or other variables, e.g. lidar, use col name as “Ns”
+Furthermore, for Ns or other variables, e.g. lidar, use col name as
+“Ns”.
 
 ##### Modeling selected vegetation indices with the *linear_model()* function
 
@@ -377,7 +383,7 @@ and test ([Figure 3](#fig-Figure3)) models there.
 
 <a id="fig-Figure2"></a>**Figure 2** The five best models selected for
 monitoring the nitrogen-nutrient index (NNI) in maize data fusion
-vegetation indices (optical_SAR_Ns_indices) at the stage of the tenth
+vegetation indices (*optical_SAR_Ns_indices*) at the stage of the tenth
 leaf of the crop maize expanded. The letters B correspond to the blue
 (B2), green (B3), red (B4), red edge (B5, B6, B7), near-infrared (B8,
 B8A) and shortwave infrared (B11, B12) bands of the Sentinel-2 spectrum.
@@ -399,7 +405,7 @@ e.g. (B8+0B3-B4)/(B8+B3+B4), correctly written this is
 
 <a id="fig-Figure3"></a>**Figure 3** Test The five best models selected
 for monitoring the nitrogen-nutrient index (NNI) in maize data fusion
-vegetation indices (optical_SAR_Ns_indices) at the stage of the tenth
+vegetation indices (*optical_SAR_Ns_indices*) at the stage of the tenth
 leaf of the crop maize expanded.RMSE: Root Mean Square Error. RRMSE:
 RMSE relative to the observed mean. MAE: Mean absolute error. MAPE: Mean
 absolute percentage error. The errors represent the average of the five
@@ -408,9 +414,10 @@ experiments.
 #### Example
 
 This is a basic example which shows you how to solve a common problem:  
-**Attention** The results in this example appear incorrectly formatted.
-The final results should look like those in [Figure 2](#fig-Figure2) and
-test [Figure 3](#fig-Figure3).
+**Attention**  
+The results in this example appear incorrectly formatted. The final
+results should look like those in [Figure 2](#fig-Figure2) and test
+[Figure 3](#fig-Figure3).
 
 ``` r
 library(SPARK)
