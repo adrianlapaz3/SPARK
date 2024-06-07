@@ -1,11 +1,14 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-<a href="https://pkgs.rstudio.com/rmarkdown/"><img src="man/figures/logo.png" align="right" height="175" style="margin-left: 20px; margin-bottom: 20px;" /></a>
-<p style="clear: left; margin-bottom: 30px;">
-</p>
-<h1 style="border-bottom: 1px solid transparent;">
-SPARK: Crop monitoring algorithm
-</h1>
+
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="man/figures/logo-dark.png">
+<source media="(prefers-color-scheme: light)" srcset="man/figures/logo.png">
+<img alt="SPARK logo" src="man/figures/logo.png" align="right" height="175" style="margin-left: 20px; margin-bottom: 20px;">
+</picture>
+
+# SPARK: Crop monitoring algorithm
+
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/adrianlapaz3/SPARK/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/adrianlapaz3/SPARK/actions/workflows/R-CMD-check.yaml)
