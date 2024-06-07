@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# SPARK: Crop monitoring algorithm <a href="https://pkgs.rstudio.com/rmarkdown/"><img src="man/figures/logo.png" align="right" height="200" /></a>
+# SPARK: Crop monitoring algorithm <a href="https://pkgs.rstudio.com/rmarkdown/"><img src="man/figures/logo.png" align="right" height="175" /></a>
 
 <!-- badges: start -->
 
@@ -10,9 +10,11 @@
 MIT](https://img.shields.io/badge/License-MIT-red.svg)](https://opensource.org/licenses/MIT)
 <!-- badges: end -->
 
-**SPARK** is an algorithm developed specifically for crop monitoring.
-Its main function is to calculate vegetation indices based on the
-observed variables by combining spectral bands and applying data fusion
+## What is?
+
+SPARK is an algorithm developed specifically for crop monitoring. Its
+main function is to calculate vegetation indices based on the observed
+variables by combining spectral bands and applying data fusion
 techniques within a linear model. By integrating both spectral band
 combinations and data fusion techniques, SPARK enables the creation of
 vegetation indices that are specifically tailored to the observed
@@ -20,7 +22,9 @@ variable. The algorithm generates explanatory linear models that provide
 a clearer understanding of the monitoring results obtained from remote
 sensing instruments in relation to the observed variable.
 
-**SPARK::maize** is equipped with average data per treatment experiment
+## Data
+
+*SPARK::maize* is equipped with average data per treatment experiment
 for above-ground biomass (AGB), nitrogen uptake (Nuptake), and nitrogen
 nutrition index (NNI). It also contains spectral bands from Sentinel-2
 (B2, B3, B4, B5, B6, B7, B8, B8A, B11 and B12), C-SAR backscatter data
