@@ -38,8 +38,7 @@ jobs:
           Rscript -e 'install.packages("covr")'
           Rscript -e 'covr::codecov()'
 
-      - uses: codecov/codecov-action@v4
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v4.0.1
         with:
-          fail_ci_if_error: true
           token: ${{ secrets.CODECOV_TOKEN }}
-          verbose: true
