@@ -5,12 +5,14 @@
 
 <!-- badges: start -->
 
+[![Lifecycle:
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/SPARK)](https://CRAN.R-project.org/package=SPARK)
 [![R-CMD-check](https://github.com/adrianlapaz3/SPARK/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/adrianlapaz3/SPARK/actions/workflows/R-CMD-check.yaml)
-[![License:
-MIT](https://img.shields.io/badge/License-MIT-red.svg)](https://opensource.org/licenses/MIT)
 <!-- badges: end -->
 
-## What is it?
+### What is it?
 
 SPARK is an algorithm developed specifically for crop monitoring. Its
 main function is to calculate vegetation indices based on the observed
@@ -22,7 +24,7 @@ variable. The algorithm generates explanatory linear models that provide
 a clearer understanding of the monitoring results obtained from remote
 sensing instruments in relation to the observed variable.
 
-## Data
+### Data
 
 *SPARK::maize* is equipped with average data per treatment experiment
 for above-ground biomass (AGB), nitrogen uptake (Nuptake), and nitrogen
