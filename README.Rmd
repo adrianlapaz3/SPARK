@@ -231,19 +231,21 @@ model_plot(
 #### Results
 The results are saved in the computer as .svg, therefore it is necessary to enter the link of the directory and the models there with the names *Train_Models.svg* and *Test_Models.svg*. [Figures 2](#fig-Figure2) and [3](#fig-Figure3) are examples of the output of the training and test models selected for data fusion with spectral bands (B3, B4, B5, B6, B8, B7<sup>2</sup>, B11<sup>2</sup>), radar (VH, VVxL) and soil nitrogen (Ns).   
   
-<a id="fig-Figure2"></a>**Example of the output for Test models selected**  
+<a id="fig-Figure2"></a>**Example of the output for training models selected**  
 ![](./man/figures/Train_Models.svg)  
   
-**Figure 2** The five best models selected for monitoring the nitrogen-nutrient index (NNI) in maize data fusion vegetation indices (*optical_SAR_Ns_indices*) at the stage of the tenth leaf of the crop maize expanded. The letters B correspond to the blue (B2), green (B3), red (B4), red edge (B5, B6, B7), near-infrared (B8, B8A) and shortwave infrared (B11, B12) bands of the Sentinel-2 spectrum. VH (vertical-horizontal) and VV (vertical-vertical) are the Sentinel-1 C-SAR backscatter values in absolute decibels divided by 100, between 0 and 1. In addition, VVxL and VHxL represent the VV and VH backscatter values multiplied by the local incidence angle in degrees (LIA) and divided by 1,000 in absolute values between 0 and 1. Ns stands for the soil nitrogen in kg ha$^{-1}$ for the soil nitrogen ($NO_{3}^{-}$-N) at a depth of 60 cm divided by 1,000, also in the range from 0 to 1.  
+**Figure 2** The top five training models selected for monitoring the nitrogen-nutrient index (NNI) using data fusion vegetation indices with the *optical_SAR_Ns_indices()* function at the tenth leaf expanded stage of maize. The letters B correspond to the blue (B2), green (B3), red (B4), red edge (B5, B6, B7), near-infrared (B8, B8A), and shortwave infrared (B11, B12) bands of the Sentinel-2 spectrum. VH (vertical-horizontal) and VV (vertical-vertical) are the Sentinel-1 C-SAR backscatter values in absolute decibels divided by 100, resulting in values between 0 and 1. In addition, VVxL and VHxL represent the VV and VH backscatter values multiplied by the local incidence angle in degrees (LIA) and divided by 1,000, which also results in values between 0 and 1. Ns represents the soil nitrogen in kg ha<sup>-1</sup> for the soil nitrogen ($NO_3^-$-$N$) at a depth of 60 cm divided by 1,000, which also ranges from 0 to 1. 
   
-**Attention**  
-The preceding number **0** means that this band is not used for the calculation of the vegetation index at this point, e.g. (B8+0B3-B4)/(B8+B3+B4), correctly written this is (B8-B4)/(B8+B3+B4).  
+**Caution**  
+The preceding number **0** means that this band is not used for the calculation of the vegetation index at this point, e.g., (B8+0B3-B4)/(B8+B3+B4). The correct expression is (B8-B4)/(B8+B3+B4).  
 
 
-<a id="fig-Figure3"></a>**Example of the output for Test models selected**    
+<a id="fig-Figure3"></a>**Example of output for testing selected models**    
 ![3](./man/figures/Test_Models.svg)  
   
-**Figure 3** Test The five best models selected for monitoring the nitrogen-nutrient index (NNI) in maize data fusion vegetation indices (*optical_SAR_Ns_indices*) at the stage of the tenth leaf of the crop maize expanded.RMSE: Root Mean Square Error. RRMSE: RMSE relative to the observed mean. MAE: Mean absolute error. MAPE: Mean absolute percentage error. The errors represent the average of the five experiments.  
+**Figure 3** Testing of the top five models selected for monitoring the nitrogen-nutrient index (NNI) using data fusion vegetation indices with the *optical_SAR_Ns_indices()* function at the tenth leaf expanded stage of maize. RMSE: Root Mean Square Error. RRMSE: RMSE relative to the observed mean. MAE: Mean Absolute Error. MAPE: Mean Absolute Percentage Error. The errors represent the average of the five experiments.  
+
+  
 
 #### Example
 
