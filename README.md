@@ -7,9 +7,9 @@
 <img alt="SPARK logo" src="man/figures/logo.png" align="right" height="175" style="margin-left: 20px; margin-bottom: 20px;">
 </picture>
 
-<h3 style="font-size: 2.5em; margin-bottom: 0;">
-SPARK: Crop monitoring algorithm
-</h3>
+<text style="font-size: 10em; margin-bottom: 20;">SPARK: Crop monitoring
+algorithm</text>
+
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/adrianlapaz3/SPARK/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/adrianlapaz3/SPARK/actions/workflows/R-CMD-check.yaml)
