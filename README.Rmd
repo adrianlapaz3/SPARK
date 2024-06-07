@@ -13,7 +13,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# SPARK: Crop monitoring algorithm <img src="man/figures/logo.svg" align="right" alt="logo" width="130" height = "150" style = "border: none; float: right;">  
+# SPARK: Crop monitoring algorithm <img src="man/figures/logo.svg" align="right" alt="logo" width="140" height = "160" style = "border: none; float: right;">  
 
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
@@ -22,7 +22,6 @@ knitr::opts_chunk$set(
 [![R-CMD-check](https://github.com/adrianlapaz3/SPARK/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/adrianlapaz3/SPARK/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-  
 
 ### What is it?  
 SPARK is an algorithm developed specifically for crop monitoring. Its main function is to calculate vegetation indices based on the observed variables by combining spectral bands and applying data fusion techniques within a linear model. By integrating both spectral band combinations and data fusion techniques, SPARK enables the creation of vegetation indices that are specifically tailored to the observed variable. The algorithm generates explanatory linear models that provide a clearer understanding of the monitoring results obtained from remote sensing instruments in relation to the observed variable.  
