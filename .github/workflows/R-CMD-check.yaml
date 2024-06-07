@@ -33,13 +33,31 @@ jobs:
           upload-snapshots: true
           build_args: 'c("--no-manual","--compact-vignettes=gs+qpdf")'
 
-      - name: Run covr
+      - name: Install dependencies
         run: |
-          Rscript -e 'install.packages(c("covr", "DT", "htmltools"))'
           Rscript -e 'install.packages("covr")'
-          Rscript -e 'covr::codecov()'
+          Rscript -e 'install.packages("DT")'
+          Rscript -e 'install.packages("htmltools")'
 
-      - name: Upload coverage reports to Codecov
+      - name: Run R CMD check
+        uses: r-lib/actions/check-r-package@v2
+        with:
+          upload-snapshots: true
+          build_args: '--compact-vignettes=gs+qpdf'
+          check_args: '--no-manual'
+
+      - name: Run covr
+        run: Rscript -e 'covr::codecov()'
+
+      - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v4.0.1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v4.0.1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+
+
+          
