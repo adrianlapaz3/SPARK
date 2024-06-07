@@ -33,14 +33,16 @@ jobs:
           upload-snapshots: true
           build_args: 'c("--no-manual","--compact-vignettes=gs+qpdf")'
 
-      - name: Install dependencies
-        run: |
-          Rscript -e 'install.packages("covr")'
-          Rscript -e 'install.packages("DT")'
-          Rscript -e 'install.packages("htmltools")'
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          use-public-rspm: true
 
-      - name: Run R CMD check
-        uses: r-lib/actions/check-r-package@v2
+      - uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          extra-packages: rcmdcheck, covr, DT, htmltools
+          needs: check
+
+      - uses: r-lib/actions/check-r-package@v2
         with:
           upload-snapshots: true
           build_args: '--compact-vignettes=gs+qpdf'
@@ -48,11 +50,6 @@ jobs:
 
       - name: Run covr
         run: Rscript -e 'covr::codecov()'
-
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v4.0.1
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v4.0.1
