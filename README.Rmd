@@ -13,6 +13,7 @@ knitr::opts_chunk$set(
 )
 ```
 
+# SPARK: Crop monitoring algorithm 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="man/figures/logo-dark.png">
   <source media="(prefers-color-scheme: light)" srcset="man/figures/logo.png">
@@ -20,7 +21,7 @@ knitr::opts_chunk$set(
 </picture>
 <br style="clear: both;">
 
-# SPARK: Crop monitoring algorithm
+
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/adrianlapaz3/SPARK/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/adrianlapaz3/SPARK/actions/workflows/R-CMD-check.yaml)
