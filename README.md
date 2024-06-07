@@ -1,9 +1,10 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+<a href="https://pkgs.rstudio.com/rmarkdown/"><img src="man/figures/logo.png" align="right" height="175" style="margin-left: 20px; margin-bottom: 20px;" /></a>
+<p style="clear: left; margin-bottom: 30px;">
+</p>
 
-### <a href="https://pkgs.rstudio.com/rmarkdown/"><img src="man/figures/logo.png" align="right" height="175" style="margin-left: 0px; margin-bottom: 20px;" /></a>
-
-# SPARK: Crop monitoring algorithm <a href="https://pkgs.rstudio.com/rmarkdown/"><img src="man/figures/blank.png" align="right" height="150" style="margin-left: 20px; margin-bottom: 20px;" /></a>
+# SPARK: Crop monitoring algorithm
 
 <!-- badges: start -->
 
