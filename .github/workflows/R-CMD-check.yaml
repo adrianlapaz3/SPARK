@@ -35,6 +35,7 @@ jobs:
 
       - name: Run covr
         run: |
+          Rscript -e 'install.packages(c("covr", "DT", "htmltools"))'
           Rscript -e 'install.packages("covr")'
           Rscript -e 'covr::codecov()'
 
