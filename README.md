@@ -386,8 +386,8 @@ The results are saved in the computer as .svg, so it is necessary to
 enter the link of the directory and the train ([Figure 2](#fig-Figure2))
 and test ([Figure 3](#fig-Figure3)) models there.
 
-**Example of the output for Train models selected**  
-<a id="fig-Figure2"></a>  
+<a id="fig-Figure2"></a>**Example of the output for Train models
+selected**  
 ![](./man/figures/Train_Models.svg)
 
 **Figure 2** The five best models selected for monitoring the
@@ -409,8 +409,8 @@ calculation of the vegetation index at this point,
 e.g. (B8+0B3-B4)/(B8+B3+B4), correctly written this is
 (B8-B4)/(B8+B3+B4).
 
-**Example of the output for Test models selected**  
-<a id="fig-Figure3"></a>  
+<a id="fig-Figure3"></a>**Example of the output for Test models
+selected**  
 ![3](./man/figures/Test_Models.svg)
 
 **Figure 3** Test The five best models selected for monitoring the
