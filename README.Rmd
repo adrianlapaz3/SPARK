@@ -13,6 +13,10 @@ knitr::opts_chunk$set(
 )
 ```
 
+```{r, include = FALSE}
+library(covr)
+```
+
 # SPARK: Crop monitoring algorithm <img src="man/figures/logo.svg" align="right" alt="logo" width="140" height = "160" style = "border: none; float: right;">  
 
 <!-- badges: start -->
@@ -307,3 +311,7 @@ model_plot(
 - <a id="ref-LapazOlveira2023a"></a>Lapaz Olveira, A, Sainz Rozas, H.R., Castro Franco, M., Carciochi, W.D., Nieto, L., Balzarini, M.G., Ciampitti, I., Reussi Calvo, N.I. 2023. Monitoring Corn Nitrogen Concentration from Radar (C-SAR), Optical, and Sensor Satellite Data Fusion. Remote Sensing, 15(3), 824. https://doi.org/10.3390/rs15030824
 - <a id="ref-LapazOlveira2023b"></a>Lapaz Olveira, A.M., Castro Franco, M., Sainz Rozas, H.R., Carciochi, W.D., Balzarini, M.G.; Avila, O., Ciampitti, I., Reussi Calvo, N.I. 2023. Monitoring corn nitrogen nutrition index from optical and synthetic aperture radar satellite data and soil available nitrogen. Precision Agriculture, 24(6), 2592-2606. https://doi.org/10.1007/s11119-023-10054-4
 - <a id="ref-Xie2014"></a>Xie, Q., Huang, W., Liang, D., Chen, P., Wu, C., Yang, G., Zhang, J., Huang, L., Zhang, D. (2014). Leaf area index estimation using vegetation indices derived from airborne hyperspectral images in winter wheat. IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing, 7(8), 3586-3594. https://doi.org/10.1109/JSTARS.2014.2342291
+
+covr::package_coverage()
+covr::codecov()
+

@@ -537,3 +537,5 @@ model_plot(
   hyperspectral images in winter wheat. IEEE Journal of Selected Topics
   in Applied Earth Observations and Remote Sensing, 7(8), 3586-3594.
   <https://doi.org/10.1109/JSTARS.2014.2342291>
+
+covr::package_coverage() covr::codecov()
