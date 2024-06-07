@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# SPARK: Crop monitoring algorithm <img src="man/figures/logo.svg" align="right" alt="logo" width="150" height = "170" style = "border: none; float: right;">
+# SPARK: Crop monitoring algorithm <img src="man/figures/logo.svg" align="right" alt="logo" width="130" height = "130" style = "border: none; float: right;">
 
 <!-- badges: start -->
 
@@ -80,10 +80,9 @@ and normality of the residuals are evaluated based on the prediction
 error obtained in each calibration and validation experiment (see
 [Figure 1](#fig-Figure1)). The index with the lowest prediction error is
 selected for the final model (see example in [Figure 2](#fig-Figure2)
-and [Figure 3](#fig-Figure3)).
-
-![](./man/figures/combination_bands.png)  
-<a id="fig-Figure1"></a>
+and [Figure 3](#fig-Figure3)).  
+<a id="fig-Figure1"></a>  
+![](./man/figures/combination_bands.png)
 
 **Figure 1** The development process of the SPARK algorithm and shows
 the iteration over bands, their combinations, and the selection of
@@ -388,8 +387,8 @@ enter the link of the directory and the train ([Figure 2](#fig-Figure2))
 and test ([Figure 3](#fig-Figure3)) models there.
 
 **Example of the output for Train models selected**  
-![](./man/figures/Train_Models.svg)  
-<a id="fig-Figure2"></a>
+<a id="fig-Figure2"></a>  
+![](./man/figures/Train_Models.svg)
 
 **Figure 2** The five best models selected for monitoring the
 nitrogen-nutrient index (NNI) in maize data fusion vegetation indices
@@ -411,8 +410,9 @@ e.g. (B8+0B3-B4)/(B8+B3+B4), correctly written this is
 (B8-B4)/(B8+B3+B4).
 
 **Example of the output for Test models selected**  
-![3](./man/figures/Test_Models.svg)  
 <a id="fig-Figure3"></a>  
+![3](./man/figures/Test_Models.svg)
+
 **Figure 3** Test The five best models selected for monitoring the
 nitrogen-nutrient index (NNI) in maize data fusion vegetation indices
 (*optical_SAR_Ns_indices*) at the stage of the tenth leaf of the crop
