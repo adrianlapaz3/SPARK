@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# SPARK: Crop monitoring algorithm <img src="man/figures/logo.svg" align="right" alt="logo" width="120" height = "139" style = "border: none; float: right;">
+# SPARK: Crop monitoring algorithm <img src="man/figures/logo.svg" align="right" alt="logo" width="130" height = "150" style = "border: none; float: right;">
 
 <!-- badges: start -->
 
