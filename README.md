@@ -5,10 +5,9 @@
 <source media="(prefers-color-scheme: dark)" srcset="man/figures/logo-dark.png">
 <source media="(prefers-color-scheme: light)" srcset="man/figures/logo.png">
 <img alt="SPARK logo" src="man/figures/logo.png" align="right" height="175" style="margin-left: 20px; margin-bottom: 20px;">
-</picture>
+</picture> <br style="clear: both;">
 
-<text style="font-size: 10em; margin-bottom: 20;">SPARK: Crop monitoring
-algorithm</text>
+# SPARK: Crop monitoring algorithm
 
 <!-- badges: start -->
 
