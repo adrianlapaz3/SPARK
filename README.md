@@ -1,7 +1,9 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# SPARK: Crop monitoring algorithm <a href="https://pkgs.rstudio.com/rmarkdown/"><img src="man/figures/logo.png" align="right" height="175" /></a>
+## <a href="https://pkgs.rstudio.com/rmarkdown/"><img src="man/figures/logo.png" align="right" height="175" /></a>
+
+# SPARK: Crop monitoring algorithm
 
 <!-- badges: start -->
 
@@ -10,7 +12,7 @@
 MIT](https://img.shields.io/badge/License-MIT-red.svg)](https://opensource.org/licenses/MIT)
 <!-- badges: end -->
 
-## What is?
+## What is it?
 
 SPARK is an algorithm developed specifically for crop monitoring. Its
 main function is to calculate vegetation indices based on the observed
