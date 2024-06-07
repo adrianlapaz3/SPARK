@@ -1,12 +1,6 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-<picture>
-<source media="(prefers-color-scheme: dark)" srcset="man/figures/logo-dark.png">
-<source media="(prefers-color-scheme: light)" srcset="man/figures/logo.png">
-<img alt="SPARK logo" src="man/figures/logo.png" align="right" height="175" style="margin-left: 20px; margin-bottom: 20px;">
-</picture> <br style="clear: both;">
-
 # SPARK: Crop monitoring algorithm <img src="man/figures/logo.svg" align="right" alt="logo" width="120" height = "139" style = "border: none; float: right;">
 
 <!-- badges: start -->
