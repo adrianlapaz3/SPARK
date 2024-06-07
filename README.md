@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# SPARK: Crop monitoring algorithm
+# SPARK: Crop monitoring algorithm <a href="https://pkgs.rstudio.com/rmarkdown/"><img src="man/figures/logo.png" align="right" height="200" /></a>
 
 <!-- badges: start -->
 
@@ -32,7 +32,9 @@ stages up to the sixth, tenth, and fourteenth fully developed leaf and
 flowering stages ($V_{6}$, $V_{10}$, $V_{14}$, and $R_{1}$,
 respectively). The experiments were conducted in different management
 zones (MZ) within four commercial production sites (Site) in two
-contrasting regions of the Argentine Pampas (North and Southeast).
+contrasting regions of the Argentine Pampas (North and Southeast)
+([Lapaz Olveira et al., 2023a](#ref-LapazOlveira2023a),
+[2023b](#ref-LapazOlveira2023b)).
 
 ## Brief overview of how SPARK works
 
@@ -73,21 +75,22 @@ error obtained in each calibration and validation experiment (see
 selected for the final model (see example in [Figure 2](#fig-Figure2)
 and [Figure 3](#fig-Figure3)).
 
-![](./man/figures/combination_bands.png)
+![](./man/figures/combination_bands.png)  
+<a id="fig-Figure1"></a>
 
-<a id="fig-Figure1"></a>**Figure 1** The development process of the
-SPARK algorithm and shows the iteration over bands, their combinations,
-and the selection of vegetation indices using three available bands. The
-letters B represent the bands in the blue (B2), green (B3), and red (B4)
-spectrum of Sentinel-2. The nomenclature $VI_i$ corresponds to a
-vegetation index, $VI_{final}$ is the matrix of the selected vegetation
-indices, $\sum B_j$ and $\sum B_k$ are sums of the bands, $cor$ is a
-function that evaluates the correlation between two variables,
-$cor_{max}$ is the maximum recorded correlation, $exp_{train(i)}$ and
-$exp_{test(i)}$ are the evaluated calibration and validation
-experiments, $RRMSE_{train}$ and $RRMSE_{test}$ are the errors of the
-individual evaluated calibration and validation experiments, and
-$RRMSE_{best}$ is the error of the best model found ($model_{best}$).
+**Figure 1** The development process of the SPARK algorithm and shows
+the iteration over bands, their combinations, and the selection of
+vegetation indices using three available bands. The letters B represent
+the bands in the blue (B2), green (B3), and red (B4) spectrum of
+Sentinel-2. The nomenclature $VI_i$ corresponds to a vegetation index,
+$VI_{final}$ is the matrix of the selected vegetation indices,
+$\sum B_j$ and $\sum B_k$ are sums of the bands, $cor$ is a function
+that evaluates the correlation between two variables, $cor_{max}$ is the
+maximum recorded correlation, $exp_{train(i)}$ and $exp_{test(i)}$ are
+the evaluated calibration and validation experiments, $RRMSE_{train}$
+and $RRMSE_{test}$ are the errors of the individual evaluated
+calibration and validation experiments, and $RRMSE_{best}$ is the error
+of the best model found ($model_{best}$).
 
 [Figure 1](#fig-Figure1) shows how vegetation indices created from
 combinations of three bands are evaluated. An adequate representation of
@@ -378,15 +381,16 @@ enter the link of the directory and the train ([Figure 2](#fig-Figure2))
 and test ([Figure 3](#fig-Figure3)) models there.
 
 **Example of the output for Train models selected**  
-![](./man/figures/Train_Models.svg)
+![](./man/figures/Train_Models.svg)  
+<a id="fig-Figure2"></a>
 
-<a id="fig-Figure2"></a>**Figure 2** The five best models selected for
-monitoring the nitrogen-nutrient index (NNI) in maize data fusion
-vegetation indices (*optical_SAR_Ns_indices*) at the stage of the tenth
-leaf of the crop maize expanded. The letters B correspond to the blue
-(B2), green (B3), red (B4), red edge (B5, B6, B7), near-infrared (B8,
-B8A) and shortwave infrared (B11, B12) bands of the Sentinel-2 spectrum.
-VH (vertical-horizontal) and VV (vertical-vertical) are the Sentinel-1
+**Figure 2** The five best models selected for monitoring the
+nitrogen-nutrient index (NNI) in maize data fusion vegetation indices
+(*optical_SAR_Ns_indices*) at the stage of the tenth leaf of the crop
+maize expanded. The letters B correspond to the blue (B2), green (B3),
+red (B4), red edge (B5, B6, B7), near-infrared (B8, B8A) and shortwave
+infrared (B11, B12) bands of the Sentinel-2 spectrum. VH
+(vertical-horizontal) and VV (vertical-vertical) are the Sentinel-1
 C-SAR backscatter values in absolute decibels divided by 100, between 0
 and 1. In addition, VVxL and VHxL represent the VV and VH backscatter
 values multiplied by the local incidence angle in degrees (LIA) and
@@ -400,15 +404,14 @@ e.g. (B8+0B3-B4)/(B8+B3+B4), correctly written this is
 (B8-B4)/(B8+B3+B4).
 
 **Example of the output for Test models selected**  
-![3](./man/figures/Test_Models.svg)
-
-<a id="fig-Figure3"></a>**Figure 3** Test The five best models selected
-for monitoring the nitrogen-nutrient index (NNI) in maize data fusion
-vegetation indices (*optical_SAR_Ns_indices*) at the stage of the tenth
-leaf of the crop maize expanded.RMSE: Root Mean Square Error. RRMSE:
-RMSE relative to the observed mean. MAE: Mean absolute error. MAPE: Mean
-absolute percentage error. The errors represent the average of the five
-experiments.
+![3](./man/figures/Test_Models.svg)  
+<a id="fig-Figure3"></a>  
+**Figure 3** Test The five best models selected for monitoring the
+nitrogen-nutrient index (NNI) in maize data fusion vegetation indices
+(*optical_SAR_Ns_indices*) at the stage of the tenth leaf of the crop
+maize expanded.RMSE: Root Mean Square Error. RRMSE: RMSE relative to the
+observed mean. MAE: Mean absolute error. MAPE: Mean absolute percentage
+error. The errors represent the average of the five experiments.
 
 #### Example
 
@@ -509,6 +512,18 @@ model_plot(
   variables for twenty winter wheat fields. Remote Sensing of
   Environment, 43(1), 1-10.
   <https://doi.org/10.1016/0034-4257(93)90059-7>
+- <a id="ref-LapazOlveira2023a"></a>Lapaz Olveira, A, Sainz Rozas, H.R.,
+  Castro Franco, M., Carciochi, W.D., Nieto, L., Balzarini, M.G.,
+  Ciampitti, I., Reussi Calvo, N.I. 2023. Monitoring Corn Nitrogen
+  Concentration from Radar (C-SAR), Optical, and Sensor Satellite Data
+  Fusion. Remote Sensing, 15(3), 824.
+  <https://doi.org/10.3390/rs15030824>
+- <a id="ref-LapazOlveira2023b"></a>Lapaz Olveira, A.M., Castro Franco,
+  M., Sainz Rozas, H.R., Carciochi, W.D., Balzarini, M.G.; Avila, O.,
+  Ciampitti, I., Reussi Calvo, N.I. 2023. Monitoring corn nitrogen
+  nutrition index from optical and synthetic aperture radar satellite
+  data and soil available nitrogen. Precision Agriculture, 24(6),
+  2592-2606. <https://doi.org/10.1007/s11119-023-10054-4>
 - <a id="ref-Xie2014"></a>Xie, Q., Huang, W., Liang, D., Chen, P., Wu,
   C., Yang, G., Zhang, J., Huang, L., Zhang, D. (2014). Leaf area index
   estimation using vegetation indices derived from airborne
