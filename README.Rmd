@@ -13,7 +13,14 @@ knitr::opts_chunk$set(
 )
 ```
 
-# SPARK: Crop monitoring algorithm <picture><source media="(prefers-color-scheme: light)" srcset="man/figures/logo.png"><img src="man/figures/logo.png" align="right" height="175" style="margin-left: 20px; margin-bottom: 20px;"></picture>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="man/figures/logo-dark.png">
+  <source media="(prefers-color-scheme: light)" srcset="man/figures/logo.png">
+  <img alt="SPARK logo" src="man/figures/logo.png" align="right" height="175" style="margin-left: 20px; margin-bottom: 20px;">
+</picture>
+<br style="clear: both;">
+
+# SPARK: Crop monitoring algorithm <img src="man/figures/logo.svg" align="right" alt="logo" width="120" height = "139" style = "border: none; float: right;">
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/adrianlapaz3/SPARK/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/adrianlapaz3/SPARK/actions/workflows/R-CMD-check.yaml)
@@ -21,12 +28,10 @@ knitr::opts_chunk$set(
 <!-- badges: end --> 
 
 
-**What is it**  
-
+## What is it?  
 SPARK is an algorithm developed specifically for crop monitoring. Its main function is to calculate vegetation indices based on the observed variables by combining spectral bands and applying data fusion techniques within a linear model. By integrating both spectral band combinations and data fusion techniques, SPARK enables the creation of vegetation indices that are specifically tailored to the observed variable. The algorithm generates explanatory linear models that provide a clearer understanding of the monitoring results obtained from remote sensing instruments in relation to the observed variable.  
 
-**Data**  
-
+## Data  
 *SPARK::maize* is equipped with average data per treatment experiment for above-ground biomass (AGB), nitrogen uptake (Nuptake), and nitrogen nutrition index (NNI). It also contains spectral bands from Sentinel-2 (B2, B3, B4, B5, B6, B7, B8, B8A, B11 and B12), C-SAR backscatter data from Sentinel-1 (VH, VV, VHxL, VVxL, in absolute values and divided by 100 and 1000), and nitrogen in soil to a depth of 60 cm (Ns) at sowing for eleven experiments on nitrogen fertilization of maize (Treatment: 0N, 60N, 120N, 180N, 240N). These experiments were conducted at growth stages up to the sixth, tenth, and fourteenth fully developed leaf and flowering stages ($V_{6}$, $V_{10}$, $V_{14}$, and $R_{1}$, respectively). The experiments were conducted in different management zones (MZ) within four commercial production sites (Site) in two contrasting regions of the Argentine Pampas (North and Southeast) ([Lapaz Olveira et al., 2023a](#ref-LapazOlveira2023a), [2023b](#ref-LapazOlveira2023b)).
 
 ## Brief overview of how SPARK works
