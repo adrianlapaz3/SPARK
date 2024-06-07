@@ -28,18 +28,19 @@ sensing instruments in relation to the observed variable.
 ### Data
 
 *SPARK::maize* is equipped with average data per treatment experiment
-for above-ground biomass (AGB), nitrogen uptake (Nuptake), and nitrogen
-nutrition index (NNI). It also contains spectral bands from Sentinel-2
-(B2, B3, B4, B5, B6, B7, B8, B8A, B11 and B12), C-SAR backscatter data
-from Sentinel-1 (VH, VV, VHxL, VVxL, in absolute values and divided by
-100 and 1000), and nitrogen in soil to a depth of 60 cm (Ns) at sowing
-for eleven experiments on nitrogen fertilization of maize (Treatment:
-0N, 60N, 120N, 180N, 240N). These experiments were conducted at growth
-stages up to the sixth, tenth, and fourteenth fully developed leaf and
-flowering stages ($V_{6}$, $V_{10}$, $V_{14}$, and $R_{1}$,
-respectively). The experiments were conducted in different management
-zones (MZ) within four commercial production sites (Site) in two
-contrasting regions of the Argentine Pampas (North and Southeast)
+for above-ground biomass (*AGB*), nitrogen uptake (*Nuptake*), and
+nitrogen nutrition index (*NNI*). It also includes spectral bands from
+Sentinel-2 (*B2*, *B3*, *B4*, *B5*, *B6*, *B7*, *B8*, *B8A*, *B11*, and
+*B12*), C-SAR backscatter data from Sentinel-1 (*VH*, *VV*, *VHxL*,
+*VVxL*, in absolute values and divided by 100 and 1000), and nitrogen in
+the soil to a depth of 60 cm (*Ns*, $NO_3^{-}$-$N$) at sowing for eleven
+experiments on nitrogen fertilization of maize (*Treatment*: 0N, 60N,
+120N, 180N, 240N). These experiments were conducted at growth stages up
+to the sixth, tenth, and fourteenth fully developed leaf and flowering
+stages ($V_{6}$, $V_{10}$, $V_{14}$, and $R_{1}$, respectively). The
+experiments were conducted in different management zones (*MZ*) within
+four commercial production sites (*Site*) in contrasting environments of
+the Argentine Pampas *Region* (Northern_Pampas and Southeastern_Pampas)
 ([Lapaz Olveira et al., 2023a](#ref-LapazOlveira2023a),
 [2023b](#ref-LapazOlveira2023b)).
 
@@ -79,8 +80,8 @@ that meet the assumptions of linearity, homoscedasticity, independence
 and normality of the residuals are evaluated based on the prediction
 error obtained in each calibration and validation experiment (see
 [Figure 1](#fig-Figure1)). The index with the lowest prediction error is
-selected for the final model (see example in [Figure 2](#fig-Figure2)
-and [Figure 3](#fig-Figure3)).  
+selected for the final model (see example in [Figures 2](#fig-Figure2)
+and [3](#fig-Figure3)).  
 <a id="fig-Figure1"></a>  
 ![](./man/figures/combination_bands.png)
 
@@ -331,7 +332,7 @@ execution time and generate too many vegetation indices. It is
 recommended to increase the scan value from 0.85 to 1, although higher
 values (around 0.95-1) should be used if there are many bands.
 
-##### Data fusion with spectral bands and radar (SAR), soil nitrogen (Ns) with the *optical_SAR_Ns_indices()* function
+##### Data fusion with spectral bands, radar (SAR), and soil nitrogen (Ns) with the *optical_SAR_Ns_indices()* function
 
 ``` r
 optical_SAR_Ns_indices(
@@ -382,11 +383,15 @@ model_plot(
 
 #### Results
 
-The results are saved in the computer as .svg, so it is necessary to
-enter the link of the directory and the train ([Figure 2](#fig-Figure2))
-and test ([Figure 3](#fig-Figure3)) models there.
+The results are saved in the computer as .svg, therefore it is necessary
+to enter the link of the directory and the models there with the names
+*Train_Models.svg* and *Test_Models.svg*. [Figures 2](#fig-Figure2) and
+[3](#fig-Figure3) are examples of the output of the training and test
+models selected for data fusion with spectral bands (B3, B4, B5, B6, B8,
+B7<sup>2</sup>, B11<sup>2</sup>), radar (VH, VVxL) and soil nitrogen
+(Ns).
 
-<a id="fig-Figure2"></a>**Example of the output for Train models
+<a id="fig-Figure2"></a>**Example of the output for Test models
 selected**  
 ![](./man/figures/Train_Models.svg)
 
@@ -404,6 +409,7 @@ divided by 1,000 in absolute values between 0 and 1. Ns stands for the
 soil nitrogen in kg ha$^{-1}$ for the soil nitrogen ($NO_{3}^{-}$-N) at
 a depth of 60 cm divided by 1,000, also in the range from 0 to 1.
 
+**Attention**  
 The preceding number **0** means that this band is not used for the
 calculation of the vegetation index at this point,
 e.g. (B8+0B3-B4)/(B8+B3+B4), correctly written this is
