@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# SPARK: Crop monitoring algorithm <img src="man/figures/logo.svg" align="right" alt="logo" width="130" height = "130" style = "border: none; float: right;">
+# SPARK: Crop monitoring algorithm <a href="https://x.com/GRSueloCultivo" target="_blank"> <img src="man/figures/logo.svg" align="right" alt="logo" width="130" height="130" style="border: none; float: right;"> </a>
 
 <!-- badges: start -->
 
@@ -33,7 +33,7 @@ nitrogen nutrition index (*NNI*). It also includes spectral bands from
 Sentinel-2 (*B2*, *B3*, *B4*, *B5*, *B6*, *B7*, *B8*, *B8A*, *B11*, and
 *B12*), C-SAR backscatter data from Sentinel-1 (*VH*, *VV*, *VHxL*,
 *VVxL*, in absolute values and divided by 100 and 1000), and nitrogen in
-the soil to a depth of 60 cm (*Ns*, $NO_3^{-}$-$N$) at sowing for eleven
+the soil to a depth of 60 cm (*Ns*, $NO_3^-$-N) at sowing for eleven
 experiments on nitrogen fertilization of maize (*Treatment*: 0N, 60N,
 120N, 180N, 240N). These experiments were conducted at growth stages up
 to the sixth, tenth, and fourteenth fully developed leaf and flowering
@@ -407,7 +407,7 @@ in values between 0 and 1. In addition, VVxL and VHxL represent the VV
 and VH backscatter values multiplied by the local incidence angle in
 degrees (LIA) and divided by 1,000, which also results in values between
 0 and 1. Ns represents the soil nitrogen in kg ha<sup>-1</sup> for the
-soil nitrogen ($NO_3^-$-$N$) at a depth of 60 cm divided by 1,000, which
+soil nitrogen ($NO_3^-$-N) at a depth of 60 cm divided by 1,000, which
 also ranges from 0 to 1.
 
 **Caution**  
