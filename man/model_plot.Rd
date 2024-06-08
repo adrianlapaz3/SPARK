@@ -76,7 +76,7 @@ model_plot(
  y_breaks = 5,
  min_y_lim = 0,
  max_y_lim = 2,
- directory = "C:/Users/User/Downloads" # tempdir()  # Put a directory for the example
+ directory = tempdir()  # Put a directory for the example
 )
 
 }
