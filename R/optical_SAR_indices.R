@@ -44,7 +44,6 @@ optical_SAR_indices <- function(data, y, n_bands, set_bands, scan = FALSE) {
       
       for (i in 1:(n-1)) {
         for (j in (i+1):n) {
-          # Verifica que el dividendo o el divisor contengan '1V'
           if (grepl("1V", colnames(setbands)[i]) || grepl("1H", colnames(setbands)[i]) || grepl("1V", colnames(setbands)[j]) || grepl("1H", colnames(setbands)[j])) {
             VI <- setbands[, i] / setbands[, j]
             cor_val <- suppressWarnings(abs(cor(y, VI, use = "complete.obs")))

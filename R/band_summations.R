@@ -19,10 +19,9 @@
 #' band_summations(spectral_bands, coefficients)
 #' 
 band_summations <- function(bands, coefficients_c) {
-  # matrix with the bands
+
   band_matrix <- as.matrix(bands) 
   
-  # multiplying the bands by the coefficients c
   summations <- band_matrix %*% coefficients_c 
   summations_df <- as.data.frame(summations)
   colnames(summations_df) <- colnames(coefficients_c)
