@@ -21,4 +21,5 @@ Coefficients c
 band_name = c("B2", "B3")
 coefficients = c(1,0,-1)
 coefficients_c(band_name,coefficients)
+
 }

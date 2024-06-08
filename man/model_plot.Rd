@@ -62,20 +62,21 @@ NNI_V10_model = linear_model(
   train_exp = c(1, 2, 3, 4, 10, 11),   
   test_exp = c(5, 6, 7, 8, 9),  
   model_degree = 2,
-  metric = "rrmse",
+  metric = "kge",
   orcutt = 1, 
   cook_distance = 0
 )
 
 # Ploting the restuls
-model_plot(models = NNI_V10_model,                       
-treatments = c("0N", "60N", "120N", "180N", "240N"),
-lables_treat = c("  0 kg N/ha", " 60 kg N/ha", "120 kg N/ha", "180 kg N/ha", "240 kg N/ha"),
-shape = c(21,22,23,24,25),
-y_breaks = 5,
-min_y_lim = 0,
-max_y_lim = 2,
-directory = tempdir()
+model_plot(
+ models = NNI_V10_model,                       
+ treatments = c("0N", "60N", "120N", "180N", "240N"),
+ lables_treat = c("  0 kg N/ha", " 60 kg N/ha", "120 kg N/ha", "180 kg N/ha", "240 kg N/ha"),
+ shape = c(21, 22, 23, 24, 25),
+ y_breaks = 5,
+ min_y_lim = 0,
+ max_y_lim = 2,
+ directory = tempdir()  # Put a directory for the example
 )
 
 }

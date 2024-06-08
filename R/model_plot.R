@@ -41,20 +41,21 @@
 #'   train_exp = c(1, 2, 3, 4, 10, 11),   
 #'   test_exp = c(5, 6, 7, 8, 9),  
 #'   model_degree = 2,
-#'   metric = "rrmse",
+#'   metric = "kge",
 #'   orcutt = 1, 
 #'   cook_distance = 0
 #' )
 #' 
 #' # Ploting the restuls
-#' model_plot(models = NNI_V10_model,                       
-#' treatments = c("0N", "60N", "120N", "180N", "240N"),
-#' lables_treat = c("  0 kg N/ha", " 60 kg N/ha", "120 kg N/ha", "180 kg N/ha", "240 kg N/ha"),
-#' shape = c(21,22,23,24,25),
-#' y_breaks = 5,
-#' min_y_lim = 0,
-#' max_y_lim = 2,
-#' directory = tempdir()
+#' model_plot(
+#'  models = NNI_V10_model,                       
+#'  treatments = c("0N", "60N", "120N", "180N", "240N"),
+#'  lables_treat = c("  0 kg N/ha", " 60 kg N/ha", "120 kg N/ha", "180 kg N/ha", "240 kg N/ha"),
+#'  shape = c(21, 22, 23, 24, 25),
+#'  y_breaks = 5,
+#'  min_y_lim = 0,
+#'  max_y_lim = 2,
+#'  directory = tempdir()  # Put a directory for the example
 #' )
 #' 
 model_plot = function(models = models,  
@@ -68,7 +69,27 @@ model_plot = function(models = models,
   
   suppressWarnings({
     
-    n_models = 5
+    output_mod1 = models$output_mod1
+    output_mod2 = models$output_mod2
+    output_mod3 = models$output_mod3
+    output_mod4 = models$output_mod4
+    output_mod5 = models$output_mod5
+    
+    if (!is.null(output_mod1)) {
+      n_models = 1}else {print("No selected models")}
+    
+    if (!is.null(output_mod2)) {
+      n_models = n_models + 1}
+    
+    if (!is.null(output_mod3)) {
+      n_models = n_models + 1}
+    
+    if (!is.null(output_mod4)) {
+      n_models = n_models + 1}
+    
+    if (!is.null(output_mod5)) {
+      n_models = n_models + 1}
+    
     
     if(is.null(min_y_lim)){
       min_y = min(models$best_train_VI_mod1[,2])
@@ -85,8 +106,8 @@ model_plot = function(models = models,
     }
     
     
-    if(as.character(models$best_metric_mod1) < Inf){
-      output_mod1 = models$output_mod1
+    if(n_models > 0 ){
+      
       mod1 = models$best_model_mod1
       summarymodel_mod1 = summary(models$best_model_mod1)
       coefficients_mod1 = coef(summarymodel_mod1)
@@ -120,12 +141,13 @@ model_plot = function(models = models,
           term = gsub("_1", "+", term)
           term = gsub("_0", "+0", term)
           term = gsub("_2", "\u00B2", term)
-          term = gsub("_", " ", term)
+          term = gsub("_", "", term)
           return(term)
         }
         processed_terms = lapply(terms, process_terms)
         processed_string = paste0("(", processed_terms[[1]], ")/(", processed_terms[[2]], ")")
         processed_string = gsub("\\(1", "(", processed_string)
+        processed_string = gsub("\\(\\+", "(", processed_string)
         return(processed_string)
       }
       
@@ -174,7 +196,7 @@ model_plot = function(models = models,
           axis.ticks = element_line(color = "black"),
           axis.ticks.length = unit(0.15, "cm"),
           axis.title = element_text(size = rel(0.8)),
-          axis.title.x = element_text(size = rel(0.975)),
+          
           panel.grid.major = element_blank(),
           panel.grid.minor = element_blank(),
           plot.margin = margin(5.5, 40, 5.5, 5.5)
@@ -222,13 +244,11 @@ model_plot = function(models = models,
       
       print(plot_train_mod1)
       
-    }else{print("No models")
-      n_models = 0}
+    }
     
     
-    
-    if (as.character(models$best_metric_mod2) < Inf) {
-      output_mod2 = models$output_mod2
+    if (n_models > 1 ) {
+      
       mod2 = models$best_model_mod2
       summarymodel_mod2 = summary(models$best_model_mod2)
       coefficients_mod2 = coef(summarymodel_mod2)
@@ -303,7 +323,7 @@ model_plot = function(models = models,
           axis.ticks = element_line(color = "black"),
           axis.ticks.length = unit(0.15, "cm"),
           axis.title = element_text(size = rel(0.8)),
-          axis.title.x = element_text(size = rel(0.975)),
+          
           panel.grid.major = element_blank(),
           panel.grid.minor = element_blank(),
           plot.margin = margin(5.5, 40, 5.5, 5.5)
@@ -351,12 +371,12 @@ model_plot = function(models = models,
       
       print(plot_train_mod2)
       
-    }else {n_models = 1}
+    }
     
     
     
-    if (as.character(models$best_metric_mod3) < Inf) {
-      output_mod3 = models$output_mod3
+    if (n_models > 2 ) {
+      
       mod3 = models$best_model_mod3
       summarymodel_mod3 = summary(models$best_model_mod3)
       coefficients_mod3 = coef(summarymodel_mod3)
@@ -433,7 +453,7 @@ model_plot = function(models = models,
           axis.ticks = element_line(color = "black"),
           axis.ticks.length = unit(0.15, "cm"),
           axis.title = element_text(size = rel(0.8)),
-          axis.title.x = element_text(size = rel(0.975)),
+          
           panel.grid.major = element_blank(),
           panel.grid.minor = element_blank(),
           plot.margin = margin(5.5, 40, 5.5, 5.5)
@@ -481,12 +501,12 @@ model_plot = function(models = models,
       
       print(plot_train_mod3)
       
-    }else {n_models = 2}
+    }
     
     
     
-    if (as.character(models$best_metric_mod4) < Inf) {
-      output_mod4 = models$output_mod4
+    if (n_models > 3 ) {
+      
       mod4 = models$best_model_mod4
       summarymodel_mod4 = summary(models$best_model_mod4)
       coefficients_mod4 = coef(summarymodel_mod4)
@@ -562,7 +582,7 @@ model_plot = function(models = models,
           axis.ticks = element_line(color = "black"),
           axis.ticks.length = unit(0.15, "cm"),
           axis.title = element_text(size = rel(0.8)),
-          axis.title.x = element_text(size = rel(0.975)),
+          
           panel.grid.major = element_blank(),
           panel.grid.minor = element_blank(),
           plot.margin = margin(5.5, 40, 5.5, 5.5)
@@ -610,27 +630,27 @@ model_plot = function(models = models,
       
       print(plot_train_mod4)
       
-    }else {n_models = 3}
+    }
     
     
     
-    if (as.character(models$best_metric_mod5) < Inf) {
-      output_mod5 = models$output_mod5
+    if (n_models > 4 ) {
+      
       mod5 = models$best_model_mod5
       summarymodel_mod5 = summary(models$best_model_mod5)
       coefficients_mod5 = coef(summarymodel_mod5)
       
-        x0_mod5 = output_mod5[1]
-        x1_mod5 = output_mod5[2]
-        x2_mod5 = output_mod5[3]
-        
-        curve_mod5 = function(x) {
-          x0_mod5 + x1_mod5*(x) + x2_mod5*(x*x) }
+      x0_mod5 = output_mod5[1]
+      x1_mod5 = output_mod5[2]
+      x2_mod5 = output_mod5[3]
+      
+      curve_mod5 = function(x) {
+        x0_mod5 + x1_mod5*(x) + x2_mod5*(x*x) }
       
       if (output_mod5[6] == 1) {
         print("The parameters of Model 5 were calculated using the iterative Cochrane-Orcutt")
       } 
-        
+      
       R2_mod5 = output_mod5[4]
       RMSE = output_mod5[5]
       min_x = min(models$best_train_VI_mod5[,3])
@@ -690,7 +710,7 @@ model_plot = function(models = models,
           axis.ticks = element_line(color = "black"),
           axis.ticks.length = unit(0.15, "cm"),
           axis.title = element_text(size = rel(0.8)),
-          axis.title.x = element_text(size = rel(0.975)),
+          
           panel.grid.major = element_blank(),
           panel.grid.minor = element_blank(),
           plot.margin = margin(5.5, 40, 5.5, 5.5)
@@ -739,11 +759,11 @@ model_plot = function(models = models,
       print(plot_train_mod5)
       
       
-    }else {n_models = 4}
+    }
     
     
     
-    if (as.character(models$best_metric_mod1) < Inf) {
+    if (n_models > 0 ) {
       train_legend = 
         ggplot(models$best_train_VI_mod1, aes(x = models$best_train_VI_mod1[,3], y = models$best_train_VI_mod1[,2])) +
         geom_point(aes(fill = as.factor(models$best_train_VI_mod1[,1]), shape = as.factor(models$best_train_VI_mod1[,4])), color = "black", size = 2.25, alpha = 0.6, stroke = 0.3) +
@@ -780,11 +800,11 @@ model_plot = function(models = models,
           panel.grid.minor = element_blank(),
           plot.margin = margin(5.5, 40, 5.5, 5.5))
       
-    }else {n_models = 0}
+    }
     
     
     
-    if (as.character(models$best_metric_mod1) < Inf) {
+    if (n_models > 0 ) {
       
       if(min_pred < min_y_lim){min_y_lim = min_pred}
       if(max_pred > max_y_lim){max_y_lim = max_pred}
@@ -800,24 +820,24 @@ model_plot = function(models = models,
       test_pred = data.frame(models$best_test_VI_mod1)
       test_exp = unique(test_pred[,1])
       for (exp in test_exp) {
-        test_exp_data = test_pred[test_pred[,1] == exp, , drop = FALSE]
+        test_exp_data_mod1 = test_pred[test_pred[,1] == exp, , drop = FALSE]
         
         test_KGE_exp = 1 - sqrt(
-          (cor(test_exp_data[,2], test_exp_data[,5]) - 1)^2 + 
-            ((sqrt(mean((test_exp_data[,5] - mean(test_exp_data[,5]))^2))/mean(test_exp_data[,5])) / (sqrt(mean((test_exp_data[,2] - mean(test_exp_data[,2]))^2))/mean(test_exp_data[,2])) - 1)^2 +
-            (mean(test_exp_data[,5]) / mean(test_exp_data[,2]) - 1)^2 )
+          (cor(test_exp_data_mod1[,2], test_exp_data_mod1[,5]) - 1)^2 + 
+            ((sqrt(mean((test_exp_data_mod1[,5] - mean(test_exp_data_mod1[,5]))^2))/mean(test_exp_data_mod1[,5])) / (sqrt(mean((test_exp_data_mod1[,2] - mean(test_exp_data_mod1[,2]))^2))/mean(test_exp_data_mod1[,2])) - 1)^2 +
+            (mean(test_exp_data_mod1[,5]) / mean(test_exp_data_mod1[,2]) - 1)^2 )
         test_KGEs = cbind(test_KGEs, test_KGE_exp)
         
-        test_RMSE_exp = sqrt(mean((test_exp_data[,5] - test_exp_data[,2])^2))
+        test_RMSE_exp = sqrt(mean((test_exp_data_mod1[,5] - test_exp_data_mod1[,2])^2))
         test_RMSEs = cbind(test_RMSEs, test_RMSE_exp)
         
-        test_RRMSE_exp = sqrt(mean((test_exp_data[,5] - test_exp_data[,2])^2))/mean(test_exp_data[,2])*100
+        test_RRMSE_exp = sqrt(mean((test_exp_data_mod1[,5] - test_exp_data_mod1[,2])^2))/mean(test_exp_data_mod1[,2])*100
         test_RRMSEs = cbind(test_RRMSEs, test_RRMSE_exp)
         
-        test_MAE_exp = mean(abs((test_exp_data[,2]-test_exp_data[,5])))
+        test_MAE_exp = mean(abs((test_exp_data_mod1[,2]-test_exp_data_mod1[,5])))
         test_MAEs = cbind(test_MAEs, test_MAE_exp)
         
-        test_MAPE_exp = mean(abs((test_exp_data[,2]-test_exp_data[,5])/test_exp_data[,2])) * 100
+        test_MAPE_exp = mean(abs((test_exp_data_mod1[,2]-test_exp_data_mod1[,5])/test_exp_data_mod1[,2])) * 100
         test_MAPEs = cbind(test_MAPEs, test_MAPE_exp)
       }
       
@@ -876,7 +896,7 @@ model_plot = function(models = models,
     
     
     
-    if (as.character(models$best_metric_mod2) < Inf) {
+    if (n_models > 1 ) {
       
       test_KGEs <- NULL
       test_RMSEs <- NULL
@@ -887,24 +907,24 @@ model_plot = function(models = models,
       test_pred = data.frame(models$best_test_VI_mod2)
       test_exp = unique(test_pred[,1])
       for (exp in test_exp) {
-        test_exp_data = test_pred[test_pred[,1] == exp, , drop = FALSE]
+        test_exp_data_mod2 = test_pred[test_pred[,1] == exp, , drop = FALSE]
         
         test_KGE_exp = 1 - sqrt(
-          (cor(test_exp_data[,2], test_exp_data[,5]) - 1)^2 + 
-            ((sqrt(mean((test_exp_data[,5] - mean(test_exp_data[,5]))^2))/mean(test_exp_data[,5])) / (sqrt(mean((test_exp_data[,2] - mean(test_exp_data[,2]))^2))/mean(test_exp_data[,2])) - 1)^2 +
-            (mean(test_exp_data[,5]) / mean(test_exp_data[,2]) - 1)^2 )
+          (cor(test_exp_data_mod2[,2], test_exp_data_mod2[,5]) - 1)^2 + 
+            ((sqrt(mean((test_exp_data_mod2[,5] - mean(test_exp_data_mod2[,5]))^2))/mean(test_exp_data_mod2[,5])) / (sqrt(mean((test_exp_data_mod2[,2] - mean(test_exp_data_mod2[,2]))^2))/mean(test_exp_data_mod2[,2])) - 1)^2 +
+            (mean(test_exp_data_mod2[,5]) / mean(test_exp_data_mod2[,2]) - 1)^2 )
         test_KGEs = cbind(test_KGEs, test_KGE_exp)
         
-        test_RMSE_exp = sqrt(mean((test_exp_data[,5] - test_exp_data[,2])^2))
+        test_RMSE_exp = sqrt(mean((test_exp_data_mod2[,5] - test_exp_data_mod2[,2])^2))
         test_RMSEs = cbind(test_RMSEs, test_RMSE_exp)
         
-        test_RRMSE_exp = sqrt(mean((test_exp_data[,5] - test_exp_data[,2])^2))/mean(test_exp_data[,2])*100
+        test_RRMSE_exp = sqrt(mean((test_exp_data_mod2[,5] - test_exp_data_mod2[,2])^2))/mean(test_exp_data_mod2[,2])*100
         test_RRMSEs = cbind(test_RRMSEs, test_RRMSE_exp)
         
-        test_MAE_exp = mean(abs((test_exp_data[,2]-test_exp_data[,5])))
+        test_MAE_exp = mean(abs((test_exp_data_mod2[,2]-test_exp_data_mod2[,5])))
         test_MAEs = cbind(test_MAEs, test_MAE_exp)
         
-        test_MAPE_exp = mean(abs((test_exp_data[,2]-test_exp_data[,5])/test_exp_data[,2])) * 100
+        test_MAPE_exp = mean(abs((test_exp_data_mod2[,2]-test_exp_data_mod2[,5])/test_exp_data_mod2[,2])) * 100
         test_MAPEs = cbind(test_MAPEs, test_MAPE_exp)
       }
       
@@ -963,7 +983,7 @@ model_plot = function(models = models,
     
     
     
-    if (as.character(models$best_metric_mod3) < Inf) {
+    if (n_models > 2 ) {
       
       test_KGEs <- NULL
       test_RMSEs <- NULL
@@ -974,24 +994,24 @@ model_plot = function(models = models,
       test_pred = data.frame(models$best_test_VI_mod3)
       test_exp = unique(test_pred[,1])
       for (exp in test_exp) {
-        test_exp_data = test_pred[test_pred[,1] == exp, , drop = FALSE]
+        test_exp_data_mod3 = test_pred[test_pred[,1] == exp, , drop = FALSE]
         
         test_KGE_exp = 1 - sqrt(
-          (cor(test_exp_data[,2], test_exp_data[,5]) - 1)^2 + 
-            ((sqrt(mean((test_exp_data[,5] - mean(test_exp_data[,5]))^2))/mean(test_exp_data[,5])) / (sqrt(mean((test_exp_data[,2] - mean(test_exp_data[,2]))^2))/mean(test_exp_data[,2])) - 1)^2 +
-            (mean(test_exp_data[,5]) / mean(test_exp_data[,2]) - 1)^2 )
+          (cor(test_exp_data_mod3[,2], test_exp_data_mod3[,5]) - 1)^2 + 
+            ((sqrt(mean((test_exp_data_mod3[,5] - mean(test_exp_data_mod3[,5]))^2))/mean(test_exp_data_mod3[,5])) / (sqrt(mean((test_exp_data_mod3[,2] - mean(test_exp_data_mod3[,2]))^2))/mean(test_exp_data_mod3[,2])) - 1)^2 +
+            (mean(test_exp_data_mod3[,5]) / mean(test_exp_data_mod3[,2]) - 1)^2 )
         test_KGEs = cbind(test_KGEs, test_KGE_exp)
         
-        test_RMSE_exp = sqrt(mean((test_exp_data[,5] - test_exp_data[,2])^2))
+        test_RMSE_exp = sqrt(mean((test_exp_data_mod3[,5] - test_exp_data_mod3[,2])^2))
         test_RMSEs = cbind(test_RMSEs, test_RMSE_exp)
         
-        test_RRMSE_exp = sqrt(mean((test_exp_data[,5] - test_exp_data[,2])^2))/mean(test_exp_data[,2])*100
+        test_RRMSE_exp = sqrt(mean((test_exp_data_mod3[,5] - test_exp_data_mod3[,2])^2))/mean(test_exp_data_mod3[,2])*100
         test_RRMSEs = cbind(test_RRMSEs, test_RRMSE_exp)
         
-        test_MAE_exp = mean(abs((test_exp_data[,2]-test_exp_data[,5])))
+        test_MAE_exp = mean(abs((test_exp_data_mod3[,2]-test_exp_data_mod3[,5])))
         test_MAEs = cbind(test_MAEs, test_MAE_exp)
         
-        test_MAPE_exp = mean(abs((test_exp_data[,2]-test_exp_data[,5])/test_exp_data[,2])) * 100
+        test_MAPE_exp = mean(abs((test_exp_data_mod3[,2]-test_exp_data_mod3[,5])/test_exp_data_mod3[,2])) * 100
         test_MAPEs = cbind(test_MAPEs, test_MAPE_exp)
       }
       
@@ -1049,7 +1069,7 @@ model_plot = function(models = models,
     
     
     
-    if (as.character(models$best_metric_mod4) < Inf) {
+    if (n_models > 3 ) {
       
       test_KGEs <- NULL
       test_RMSEs <- NULL
@@ -1060,25 +1080,26 @@ model_plot = function(models = models,
       test_pred = data.frame(models$best_test_VI_mod4)
       test_exp = unique(test_pred[,1])
       for (exp in test_exp) {
-        test_exp_data = test_pred[test_pred[,1] == exp, , drop = FALSE]
+        test_exp_data_mod4 = test_pred[test_pred[,1] == exp, , drop = FALSE]
         test_KGE_exp = 1 - sqrt(
-          (cor(test_exp_data[,2], test_exp_data[,5]) - 1)^2 + 
-            ((sqrt(mean((test_exp_data[,5] - mean(test_exp_data[,5]))^2))/mean(test_exp_data[,5])) / (sqrt(mean((test_exp_data[,2] - mean(test_exp_data[,2]))^2))/mean(test_exp_data[,2])) - 1)^2 +
-            (mean(test_exp_data[,5]) / mean(test_exp_data[,2]) - 1)^2 )
+          (cor(test_exp_data_mod4[,2], test_exp_data_mod4[,5]) - 1)^2 + 
+            ((sqrt(mean((test_exp_data_mod4[,5] - mean(test_exp_data_mod4[,5]))^2))/mean(test_exp_data_mod4[,5])) / (sqrt(mean((test_exp_data_mod4[,2] - mean(test_exp_data_mod4[,2]))^2))/mean(test_exp_data_mod4[,2])) - 1)^2 +
+            (mean(test_exp_data_mod4[,5]) / mean(test_exp_data_mod4[,2]) - 1)^2 )
         test_KGEs = cbind(test_KGEs, test_KGE_exp)
         
-        test_RMSE_exp = sqrt(mean((test_exp_data[,5] - test_exp_data[,2])^2))
+        test_RMSE_exp = sqrt(mean((test_exp_data_mod4[,5] - test_exp_data_mod4[,2])^2))
         test_RMSEs = cbind(test_RMSEs, test_RMSE_exp)
         
-        test_RRMSE_exp = sqrt(mean((test_exp_data[,5] - test_exp_data[,2])^2))/mean(test_exp_data[,2])*100
+        test_RRMSE_exp = sqrt(mean((test_exp_data_mod4[,5] - test_exp_data_mod4[,2])^2))/mean(test_exp_data_mod4[,2])*100
         test_RRMSEs = cbind(test_RRMSEs, test_RRMSE_exp)
         
-        test_MAE_exp = mean(abs((test_exp_data[,2]-test_exp_data[,5])))
+        test_MAE_exp = mean(abs((test_exp_data_mod4[,2]-test_exp_data_mod4[,5])))
         test_MAEs = cbind(test_MAEs, test_MAE_exp)
         
-        test_MAPE_exp = mean(abs((test_exp_data[,2]-test_exp_data[,5])/test_exp_data[,2])) * 100
+        test_MAPE_exp = mean(abs((test_exp_data_mod4[,2]-test_exp_data_mod4[,5])/test_exp_data_mod4[,2])) * 100
         test_MAPEs = cbind(test_MAPEs, test_MAPE_exp)
       }
+      
       
       KGE = mean(test_KGEs)
       RMSE = mean(test_RMSEs)
@@ -1135,7 +1156,7 @@ model_plot = function(models = models,
     
     
     
-    if (as.character(models$best_metric_mod5) < Inf) {
+    if (n_models > 4 ) {
       
       test_KGEs <- NULL
       test_RMSEs <- NULL
@@ -1146,24 +1167,24 @@ model_plot = function(models = models,
       test_pred = data.frame(models$best_test_VI_mod5)
       test_exp = unique(test_pred[,1])
       for (exp in test_exp) {
-        test_exp_data = test_pred[test_pred[,1] == exp, , drop = FALSE]
+        test_exp_data_mod5 = test_pred[test_pred[,1] == exp, , drop = FALSE]
         
         test_KGE_exp = 1 - sqrt(
-          (cor(test_exp_data[,2], test_exp_data[,5]) - 1)^2 + 
-            ((sqrt(mean((test_exp_data[,5] - mean(test_exp_data[,5]))^2))/mean(test_exp_data[,5])) / (sqrt(mean((test_exp_data[,2] - mean(test_exp_data[,2]))^2))/mean(test_exp_data[,2])) - 1)^2 +
-            (mean(test_exp_data[,5]) / mean(test_exp_data[,2]) - 1)^2 )
+          (cor(test_exp_data_mod5[,2], test_exp_data_mod5[,5]) - 1)^2 + 
+            ((sqrt(mean((test_exp_data_mod5[,5] - mean(test_exp_data_mod5[,5]))^2))/mean(test_exp_data_mod5[,5])) / (sqrt(mean((test_exp_data_mod5[,2] - mean(test_exp_data_mod5[,2]))^2))/mean(test_exp_data_mod5[,2])) - 1)^2 +
+            (mean(test_exp_data_mod5[,5]) / mean(test_exp_data_mod5[,2]) - 1)^2 )
         test_KGEs = cbind(test_KGEs, test_KGE_exp)
         
-        test_RMSE_exp = sqrt(mean((test_exp_data[,5] - test_exp_data[,2])^2))
+        test_RMSE_exp = sqrt(mean((test_exp_data_mod5[,5] - test_exp_data_mod5[,2])^2))
         test_RMSEs = cbind(test_RMSEs, test_RMSE_exp)
         
-        test_RRMSE_exp = sqrt(mean((test_exp_data[,5] - test_exp_data[,2])^2))/mean(test_exp_data[,2])*100
+        test_RRMSE_exp = sqrt(mean((test_exp_data_mod5[,5] - test_exp_data_mod5[,2])^2))/mean(test_exp_data_mod5[,2])*100
         test_RRMSEs = cbind(test_RRMSEs, test_RRMSE_exp)
         
-        test_MAE_exp = mean(abs((test_exp_data[,2]-test_exp_data[,5])))
+        test_MAE_exp = mean(abs((test_exp_data_mod5[,2]-test_exp_data_mod5[,5])))
         test_MAEs = cbind(test_MAEs, test_MAE_exp)
         
-        test_MAPE_exp = mean(abs((test_exp_data[,2]-test_exp_data[,5])/test_exp_data[,2])) * 100
+        test_MAPE_exp = mean(abs((test_exp_data_mod5[,2]-test_exp_data_mod5[,5])/test_exp_data_mod5[,2])) * 100
         test_MAPEs = cbind(test_MAPEs, test_MAPE_exp)
       }
       
@@ -1222,7 +1243,7 @@ model_plot = function(models = models,
     
     
     
-    if (as.character(models$best_metric_mod1) < Inf) {
+    if (n_models > 0) {
       test_legend = 
         ggplot(models$best_test_VI_mod1, aes(x = models$best_test_VI_mod1[,5], y = models$best_test_VI_mod1[,2])) +
         geom_point(aes(fill = as.factor(models$best_test_VI_mod1[,1]), shape = as.factor(models$best_test_VI_mod1[,4])), color = "black", size = 2.25, alpha = 0.6, stroke = 0.3) +
@@ -1261,7 +1282,7 @@ model_plot = function(models = models,
       
     }
     
-  
+    
     
     if(n_models == 5) {
       
@@ -1273,13 +1294,13 @@ model_plot = function(models = models,
                plot_train_mod3 + theme(plot.margin = unit(c(0.1, 0.1, 0.1, 0.1), "mm")),
                plot_train_mod4 + theme(plot.margin = unit(c(0.1, 0.1, 0.1, 0.1), "mm")),   
                plot_train_mod5 + theme(plot.margin = unit(c(0.1, 0.1, 0.1, 0.1), "mm")),
-               test_legend + theme(plot.margin = unit(c(0.1, 0.1, 0.1, 0.1), "mm"))
+               train_legend + theme(plot.margin = unit(c(0.1, 0.1, 0.1, 0.1), "mm"))
              ),
              set_panel_size,
              width = unit(5, "cm"),
              height = unit(5, "cm")
              ), nrow = 2, ncol = 3),
-             width = 22, height = 14, units = "cm")
+             width = 21, height = 13, units = "cm")
       
       ggsave(filename = file.path(directory, "Test_Models.svg"), dpi = 1000, limitsize = F,
              
@@ -1295,7 +1316,7 @@ model_plot = function(models = models,
              width = unit(5, "cm"),
              height = unit(5, "cm")
              ), nrow = 2, ncol = 3),
-             width = 22, height = 14, units = "cm")}
+             width = 21, height = 13, units = "cm")}
     
     
     
@@ -1308,13 +1329,13 @@ model_plot = function(models = models,
                plot_train_mod2 + theme(plot.margin = unit(c(0.1, 0.1, 0.1, 0.1), "mm")),
                plot_train_mod3 + theme(plot.margin = unit(c(0.1, 0.1, 0.1, 0.1), "mm")),
                plot_train_mod4 + theme(plot.margin = unit(c(0.1, 0.1, 0.1, 0.1), "mm")),   
-               test_legend + theme(plot.margin = unit(c(0.1, 0.1, 0.1, 0.1), "mm"))
+               train_legend + theme(plot.margin = unit(c(0.1, 0.1, 0.1, 0.1), "mm"))
              ),
              set_panel_size,
              width = unit(5, "cm"),
              height = unit(5, "cm")
              ), nrow = 2, ncol = 3),
-             width = 22, height = 14, units = "cm")
+             width = 21, height = 13, units = "cm")
       
       ggsave(filename = file.path(directory, "Test_Models.svg"), dpi = 1000, limitsize = F,
              
@@ -1329,7 +1350,7 @@ model_plot = function(models = models,
              width = unit(5, "cm"),
              height = unit(5, "cm")
              ), nrow = 2, ncol = 3),
-             width = 22, height = 14, units = "cm")}
+             width = 21, height = 13, units = "cm")}
     
     
     
@@ -1340,13 +1361,13 @@ model_plot = function(models = models,
                plot_train_mod1 + theme(plot.margin = unit(c(0.1, 0.1, 0.1, 0.1), "mm")), 
                plot_train_mod2 + theme(plot.margin = unit(c(0.1, 0.1, 0.1, 0.1), "mm")),
                plot_train_mod3 + theme(plot.margin = unit(c(0.1, 0.1, 0.1, 0.1), "mm")),  
-               test_legend + theme(plot.margin = unit(c(0.1, 0.1, 0.1, 0.1), "mm"))
+               train_legend + theme(plot.margin = unit(c(0.1, 0.1, 0.1, 0.1), "mm"))
              ),
              set_panel_size,
              width = unit(5, "cm"),
              height = unit(5, "cm")
              ), nrow = 2, ncol = 2),
-             width = 14.7, height = 14, units = "cm")
+             width = 14, height = 13, units = "cm")
       
       ggsave(filename = file.path(directory, "Test_Models.svg"), dpi = 1000, limitsize = F,
              grid.arrange(grobs = lapply(list(
@@ -1359,7 +1380,7 @@ model_plot = function(models = models,
              width = unit(5, "cm"),
              height = unit(5, "cm")
              ), nrow = 2, ncol = 2),
-             width = 14.7, height = 14, units = "cm")}
+             width = 14, height = 13, units = "cm")}
     
     if(n_models==2) {
       
@@ -1367,13 +1388,13 @@ model_plot = function(models = models,
              grid.arrange(grobs = lapply(list(
                plot_train_mod1 + theme(plot.margin = unit(c(0.1, 0.1, 0.1, 0.1), "mm")), 
                plot_train_mod2 + theme(plot.margin = unit(c(0.1, 0.1, 0.1, 0.1), "mm")),
-               test_legend + theme(plot.margin = unit(c(0.1, 0.1, 0.1, 0.1), "mm"))
+               train_legend + theme(plot.margin = unit(c(0.1, 0.1, 0.1, 0.1), "mm"))
              ),
              set_panel_size,
              width = unit(5, "cm"),
              height = unit(5, "cm")
              ), nrow = 1, ncol = 3),
-             width = 22, height = 7, units = "cm")
+             width = 21, height = 6.5, units = "cm")
       
       ggsave(filename = file.path(directory, "Test_Models.svg"), dpi = 1000, limitsize = F,
              grid.arrange(grobs = lapply(list(
@@ -1385,7 +1406,7 @@ model_plot = function(models = models,
              width = unit(5, "cm"),
              height = unit(5, "cm")
              ), nrow = 1, ncol = 3),
-             width = 22, height = 7, units = "cm")}
+             width = 21, height = 6.5, units = "cm")}
     
     
     
@@ -1394,13 +1415,13 @@ model_plot = function(models = models,
       ggsave(filename = file.path(directory, "Train_Models.svg"), dpi = 1000, limitsize = F,
              grid.arrange(grobs = lapply(list(
                plot_train_mod1 + theme(plot.margin = unit(c(0.1, 0.1, 0.1, 0.1), "mm")),
-               test_legend + theme(plot.margin = unit(c(0.1, 0.1, 0.1, 0.1), "mm"))
+               train_legend + theme(plot.margin = unit(c(0.1, 0.1, 0.1, 0.1), "mm"))
              ),
              set_panel_size,
              width = unit(5, "cm"),
              height = unit(5, "cm")
              ), nrow = 1, ncol = 2),
-             width = 14.7, height = 7, units = "cm")
+             width = 14, height = 6.5, units = "cm")
       
       ggsave(filename = file.path(directory, "Test_Models.svg"), dpi = 1000, limitsize = F,
              grid.arrange(grobs = lapply(list(
@@ -1411,8 +1432,9 @@ model_plot = function(models = models,
              width = unit(5, "cm"),
              height = unit(5, "cm")
              ), nrow = 1, ncol = 2),
-             width = 14.7, height = 7, units = "cm")}
+             width = 14, height = 6.5, units = "cm")}
     
     
   })
 }
+
