@@ -33,16 +33,16 @@ nitrogen nutrition index (*NNI*). It also includes spectral bands from
 Sentinel-2 (*B2*, *B3*, *B4*, *B5*, *B6*, *B7*, *B8*, *B8A*, *B11*, and
 *B12*), C-SAR backscatter data from Sentinel-1 (*VH*, *VV*, *VHxL*,
 *VVxL*, in absolute values and divided by 100 and 1000), and nitrogen in
-the soil to a depth of 60 cm (*Ns*, $\mathit{NO_{3}^{-}}$-$\mathit{N}$)
-at sowing for eleven experiments on nitrogen fertilization of maize
-(*Treatment*: 0N, 60N, 120N, 180N, 240N). These experiments were
-conducted at growth stages up to the sixth, tenth, and fourteenth fully
-developed leaf and flowering stages ($V_{6}$, $V_{10}$, $V_{14}$, and
-$R_{1}$, respectively). The experiments were conducted in different
-management zones (*MZ*) within four commercial production sites (*Site*)
-in contrasting environments of the Argentine Pampas *Region*
-(Northern_Pampas and Southeastern_Pampas) ([Lapaz Olveira et al.,
-2023a](#ref-LapazOlveira2023a), [2023b](#ref-LapazOlveira2023b)).
+the soil to a depth of 60 cm (*Ns*, $NO_{3}^{-}-N$) at sowing for eleven
+experiments on nitrogen fertilization of maize (*Treatment*: 0N, 60N,
+120N, 180N, 240N). These experiments were conducted at growth stages up
+to the sixth, tenth, and fourteenth fully developed leaf and flowering
+stages ($V_{6}$, $V_{10}$, $V_{14}$, and $R_{1}$, respectively). The
+experiments were conducted in different management zones (*MZ*) within
+four commercial production sites (*Site*) in contrasting environments of
+the Argentine Pampas *Region* (Northern_Pampas and Southeastern_Pampas)
+([Lapaz Olveira et al., 2023a](#ref-LapazOlveira2023a),
+[2023b](#ref-LapazOlveira2023b)).
 
 ## Brief overview of how SPARK works
 
@@ -83,7 +83,7 @@ error obtained in each calibration and validation experiment (see
 selected for the final model (see example in [Figures 2](#fig-Figure2)
 and [3](#fig-Figure3)).  
 <a id="fig-Figure1"></a>  
-![](./man/figures/combination_bands.png)
+<img src="./man/figures/combination_bands.svg" style="width: 100%; height: auto;">
 
 **Figure 1** The development process of the SPARK algorithm and shows
 the iteration over bands, their combinations, and the selection of
@@ -393,7 +393,7 @@ B7<sup>2</sup>, B11<sup>2</sup>), radar (VH, VVxL) and soil nitrogen
 
 <a id="fig-Figure2"></a>**Example of the output for training models
 selected**  
-![](./man/figures/Train_Models.svg)
+<img src="./man/figures/Train_Models.svg" style="width: 100%; height: auto;">
 
 **Figure 2** The top five training models selected for monitoring the
 nitrogen-nutrient index (NNI) using data fusion vegetation indices with
@@ -407,8 +407,8 @@ in values between 0 and 1. In addition, VVxL and VHxL represent the VV
 and VH backscatter values multiplied by the local incidence angle in
 degrees (LIA) and divided by 1,000, which also results in values between
 0 and 1. Ns represents the soil nitrogen in kg ha<sup>-1</sup> for the
-soil nitrogen ($\mathit{NO_{3}^{-}}$-$\mathit{N}$) at a depth of 60 cm
-divided by 1,000, which also ranges from 0 to 1.
+soil nitrogen ($NO_{3}^{-}-{N}$) at a depth of 60 cm divided by 1,000,
+which also ranges from 0 to 1.
 
 **Caution**  
 The preceding number **0** means that this band is not used for the
@@ -417,7 +417,7 @@ calculation of the vegetation index at this point, e.g.,
 
 <a id="fig-Figure3"></a>**Example of output for testing selected
 models**  
-![3](./man/figures/Test_Models.svg)
+<img src="./man/figures/Test_Models.svg" style="width: 100%; height: auto;">
 
 **Figure 3** Testing of the top five models selected for monitoring the
 nitrogen-nutrient index (NNI) using data fusion vegetation indices with
