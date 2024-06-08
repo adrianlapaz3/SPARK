@@ -5,12 +5,11 @@
 
 <!-- badges: start -->
 
+[![R-CMD-check](https://github.com/adrianlapaz3/SPARK/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/adrianlapaz3/SPARK/actions/workflows/R-CMD-check.yaml)
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
-[![codecov](https://codecov.io/github/adrianlapaz3/SPARK/graph/badge.svg?token=35GUAAMGCZ)](https://codecov.io/github/adrianlapaz3/SPARK)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/SPARK)](https://CRAN.R-project.org/package=SPARK)
-[![R-CMD-check](https://github.com/adrianlapaz3/SPARK/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/adrianlapaz3/SPARK/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 ### What is it?

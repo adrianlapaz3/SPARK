@@ -1261,7 +1261,7 @@ model_plot = function(models = models,
       
     }
     
-  
+    
     
     if(n_models == 5) {
       
@@ -1279,7 +1279,7 @@ model_plot = function(models = models,
              width = unit(5, "cm"),
              height = unit(5, "cm")
              ), nrow = 2, ncol = 3),
-             width = 22, height = 14, units = "cm")
+             width = 19.8, height = 12.5, units = "cm")
       
       ggsave(filename = file.path(directory, "Test_Models.svg"), dpi = 1000, limitsize = F,
              
@@ -1295,7 +1295,7 @@ model_plot = function(models = models,
              width = unit(5, "cm"),
              height = unit(5, "cm")
              ), nrow = 2, ncol = 3),
-             width = 22, height = 14, units = "cm")}
+             width = 19.8, height = 12.5, units = "cm")}
     
     
     
@@ -1314,7 +1314,7 @@ model_plot = function(models = models,
              width = unit(5, "cm"),
              height = unit(5, "cm")
              ), nrow = 2, ncol = 3),
-             width = 22, height = 14, units = "cm")
+             width = 19.8, height = 12.5, units = "cm")
       
       ggsave(filename = file.path(directory, "Test_Models.svg"), dpi = 1000, limitsize = F,
              
@@ -1329,7 +1329,7 @@ model_plot = function(models = models,
              width = unit(5, "cm"),
              height = unit(5, "cm")
              ), nrow = 2, ncol = 3),
-             width = 22, height = 14, units = "cm")}
+             width = 19.8, height = 12.5, units = "cm")}
     
     
     
@@ -1346,7 +1346,7 @@ model_plot = function(models = models,
              width = unit(5, "cm"),
              height = unit(5, "cm")
              ), nrow = 2, ncol = 2),
-             width = 14.7, height = 14, units = "cm")
+             width = 13.2, height = 12.5, units = "cm")
       
       ggsave(filename = file.path(directory, "Test_Models.svg"), dpi = 1000, limitsize = F,
              grid.arrange(grobs = lapply(list(
@@ -1359,7 +1359,7 @@ model_plot = function(models = models,
              width = unit(5, "cm"),
              height = unit(5, "cm")
              ), nrow = 2, ncol = 2),
-             width = 14.7, height = 14, units = "cm")}
+             width = 13.2, height = 12.5, units = "cm")}
     
     if(n_models==2) {
       
@@ -1373,7 +1373,7 @@ model_plot = function(models = models,
              width = unit(5, "cm"),
              height = unit(5, "cm")
              ), nrow = 1, ncol = 3),
-             width = 22, height = 7, units = "cm")
+             width = 19.8, height = 6.25, units = "cm")
       
       ggsave(filename = file.path(directory, "Test_Models.svg"), dpi = 1000, limitsize = F,
              grid.arrange(grobs = lapply(list(
@@ -1385,7 +1385,7 @@ model_plot = function(models = models,
              width = unit(5, "cm"),
              height = unit(5, "cm")
              ), nrow = 1, ncol = 3),
-             width = 22, height = 7, units = "cm")}
+             width = 19.8, height = 12.5, units = "cm")}
     
     
     
@@ -1400,7 +1400,7 @@ model_plot = function(models = models,
              width = unit(5, "cm"),
              height = unit(5, "cm")
              ), nrow = 1, ncol = 2),
-             width = 14.7, height = 7, units = "cm")
+             width = 13.2, height = 6.25, units = "cm")
       
       ggsave(filename = file.path(directory, "Test_Models.svg"), dpi = 1000, limitsize = F,
              grid.arrange(grobs = lapply(list(
@@ -1411,7 +1411,7 @@ model_plot = function(models = models,
              width = unit(5, "cm"),
              height = unit(5, "cm")
              ), nrow = 1, ncol = 2),
-             width = 14.7, height = 7, units = "cm")}
+             width = 13.2, height = 6.25, units = "cm")}
     
     
   })
