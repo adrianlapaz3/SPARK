@@ -41,7 +41,7 @@
 #'   train_exp = c(1, 2, 3, 4, 10, 11),   
 #'   test_exp = c(5, 6, 7, 8, 9),  
 #'   model_degree = 2,
-#'   metric = "kge",
+#'   metric = "rrmse",
 #'   orcutt = 1, 
 #'   cook_distance = 0
 #' )
@@ -55,7 +55,7 @@
 #'  y_breaks = 5,
 #'  min_y_lim = 0,
 #'  max_y_lim = 2,
-#'  directory = tempdir()  # Put a directory for the example
+#'  directory = "C:/Users/User/Downloads" # tempdir()  # Put a directory for the example
 #' )
 #' 
 model_plot = function(models = models,  
