@@ -409,11 +409,6 @@ degrees (LIA) and divided by 1,000, which also results in values between
 soil nitrogen ($NO_{3}^{-}-{N}$) at a depth of 60 cm divided by 1,000,
 which also ranges from 0 to 1.
 
-**Caution**  
-The preceding number **0** means that this band is not used for the
-calculation of the vegetation index at this point, e.g.,
-(B8+0B3-B4)/(B8+B3+B4). The correct expression is (B8-B4)/(B8+B3+B4).
-
 <a id="fig-Figure3"></a>**Example of output for testing selected
 models**  
 <img src="./man/figures/Test_Models.svg" style="width: 100%; height: auto;">
