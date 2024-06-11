@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# SPARK: Crop monitoring algorithm <a href="https://x.com/GRSueloCultivo" target="_blank"> <img src="man/figures/logo.svg" align="right" alt="logo" width="130" height="130" style="border: none; float: right;"> </a>
+# SPARK: Crop monitoring algorithm
 
 <!-- badges: start -->
 
@@ -10,11 +10,6 @@
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/SPARK)](https://CRAN.R-project.org/package=SPARK)
-[![FCA
-UNMdP](https://img.shields.io/badge/FCA%20UNMdP-darkgreen)](https://fca.mdp.edu.ar/)
-[![INTA](https://img.shields.io/badge/INTA-darkblue)](https://www.argentina.gob.ar/inta)
-[![CONICET](https://img.shields.io/badge/CONICET-blue)](https://www.conicet.gov.ar/)
-[![FONCyT](https://img.shields.io/badge/FONCyT-skyblue)](https://www.argentina.gob.ar/ciencia/agencia/fondo-para-la-investigacion-cientifica-y-tecnologica-foncyt)
 <!-- badges: end -->
 
 ### What is it?

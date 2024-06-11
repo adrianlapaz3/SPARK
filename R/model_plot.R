@@ -1,7 +1,7 @@
 #' model_plot
 #'
 #' @param models Top five of VIs, models, used metric, observed variable, and predicted variable 
-#' @param treatments Vector indicating the sequence of treatment pauses, e.g. c("0N", "60N", "120N", "180N", "240N")
+#' @param treatments Vector indicating the sequence of treatment, e.g. c("0N", "60N", "120N", "180N", "240N")
 #' @param shape Vector that specifies the order of the shapes for the treatment breaks in the legend, e.g. c(21, 22, 23, 24, 25)
 #' @param y_breaks Number of breaks for the observable variable (y-axis) in the diagram, e.g. 5 for a range from 0 to 1, with the axis points marked at 0, 0.2, 0.4, 0.6, 0.8 and 1
 #' @param min_y_lim Minimum limit for the axis of the observable variable (y-axis) in the diagram, e.g. 0
