@@ -19,9 +19,9 @@ model_plot(
 \arguments{
 \item{models}{Top five of VIs, models, used metric, observed variable, and predicted variable}
 
-\item{treatments}{Vector indicating the sequence of treatment pauses, e.g. c("0N", "60N", "120N", "180N", "240N")}
+\item{treatments}{Vector indicating the sequence of treatment, e.g. c("0N", "60N", "120N", "180N", "240N")}
 
-\item{lables_treat}{Vector indicating the sequence of labels treatment pauses, e.g. c("0 kg N/ha", "60 kg N/ha", "120 kg N/ha", "180 kg N/ha", "240 kg N/ha")}
+\item{lables_treat}{Vector indicating the sequence of labels treatment breaks, e.g. c("0 kg N/ha", "60 kg N/ha", "120 kg N/ha", "180 kg N/ha", "240 kg N/ha")}
 
 \item{shape}{Vector that specifies the order of the shapes for the treatment breaks in the legend, e.g. c(21, 22, 23, 24, 25)}
 

@@ -22,7 +22,7 @@ linear_model(
 
 \item{y}{Observed variable, e.g. data["yield"]}
 
-\item{experiment}{Variable_with_number_experiments, e.g. data["Experiment"]}
+\item{experiment}{Variable with_number experiments, e.g. data["Experiment"]}
 
 \item{treatment}{Variable_with_treatments, e.g. data["Treatment"]}
 

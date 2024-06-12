@@ -2,7 +2,7 @@
 #'
 #' @param VIs selected vegetation indices
 #' @param y Observed variable, e.g. data["yield"]
-#' @param experiment Variable_with_number_experiments, e.g. data["Experiment"]
+#' @param experiment Variable with_number experiments, e.g. data["Experiment"]
 #' @param train_exp Vector with experiment numbers for train model, e.g. c(1,2,3,4,8,9)
 #' @param test_exp Vector with experiment numbers for test model,  e.g. c(5,6,7,8,9)
 #' @param model_degree Degree of model (1 or 2),
